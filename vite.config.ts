@@ -11,4 +11,5 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  assetsInclude: ["**/*.xlsx"], // .xlsx 파일을 Vite 에셋으로 포함
 });

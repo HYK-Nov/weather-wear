@@ -16,7 +16,9 @@ type WeatherCategory =
   | "VVV"
   | "WAV"
   | "VEC"
-  | "WSD";
+  | "WSD"
+  | "RN1"
+  | "T1H";
 
 // 하늘 상태 코드
 export const SkyCode: TObjectStringKey = {
@@ -41,9 +43,15 @@ export type TWeather = {
   baseDate: string; // 발표 일자
   baseTime: string; // 발표 시각
   category: WeatherCategory; // 예보 코드
+  nx: number; // 예보 지점 X값
+  ny: number; // 예보 지점 Y값
+  obsrValue: string; // 단기 예보 값
   fcstDate: string; // 예보 일자
   fcstTime: string; // 예보 시각
   fcstValue: string; // 예보 값
-  nx: number; // 예보 지점 X값
-  ny: number; // 예보 지점 Y값
+};
+
+export type TCoord = {
+  latitude: number;
+  longitude: number;
 };
