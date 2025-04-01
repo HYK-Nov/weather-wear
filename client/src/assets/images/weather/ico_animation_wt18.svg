@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ico_wt18</title>
+    <defs>
+        <linearGradient x1="50%" y1="107.317073%" x2="50%" y2="-7.31707317%" id="linearGradient-1">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#60ACFF" stop-opacity="0.62" offset="1%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.74" offset="11%"></stop>
+            <stop stop-color="#59A6FF" stop-opacity="0.83" offset="22%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.91" offset="34%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="48%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="66%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="3.675758%" y1="23.4209724%" x2="69.0156445%" y2="69.5590247%" id="linearGradient-2">
+            <stop stop-color="#C9CACC" offset="0%"></stop>
+            <stop stop-color="#BABBBD" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="37.4247871%" y1="-0.903180019%" x2="52.3249992%" y2="59.2061067%" id="linearGradient-3">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-24.6618646%" y1="11.1626579%" x2="62.7510879%" y2="64.2717366%" id="linearGradient-4">
+            <stop stop-color="#E9E9ED" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <path d="M65.5625,13.6704545 L65.3579545,13.6704545 C61.5871568,4.70993881 52.4522856,-0.781215924 42.7700037,0.092383178 C33.0877219,0.96598228 25.0832752,8.00355891 22.9772727,17.4943182 C13.9870481,18.2707478 7.20376882,25.9909609 7.59051283,35.0063595 C7.97725683,44.0217581 15.3967652,51.1326978 24.4204545,51.1363636 L65.0227273,51.1363636 L65.0227273,51.1363636 L65.5909091,51.1363636 C72.4741799,51.4300676 78.964083,47.9252131 82.4933099,42.0082683 C86.0225368,36.0913234 86.0225368,28.7154948 82.4933099,22.7985499 C78.964083,16.8816051 72.4741799,13.3767506 65.5909091,13.6704545 L65.5625,13.6704545 Z" id="path-5"></path>
+        <linearGradient x1="7.43326279%" y1="7.40639674%" x2="50.3952231%" y2="50.3810773%" id="linearGradient-7">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="7.17318775%" y1="7.17318775%" x2="39.4297847%" y2="39.4297847%" id="linearGradient-8">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="105.357143%" x2="50%" y2="-5.35714286%" id="linearGradient-9">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="10.6375195%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.994124382" offset="81.1980217%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="133.333333%" x2="50.0000009%" y2="36.6145833%" id="linearGradient-10">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="113.043478%" x2="50%" y2="-13.0434783%" id="linearGradient-11">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="110%" x2="50%" y2="-10%" id="linearGradient-12">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="150%" x2="50%" y2="-50%" id="linearGradient-13">
+            <stop stop-color="#61ADFF" offset="0%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="42.9620017%" y1="35.2026683%" x2="64.9334628%" y2="73.4755234%" id="linearGradient-14">
+            <stop stop-color="#FFCC14" offset="0%"></stop>
+            <stop stop-color="#FFB90A" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+    <![CDATA[
+        .cloud {
+        -webkit-animation: cloud-anim 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: cloud-anim 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes cloud-anim {
+        0% { -webkit-transform: translate(0px, 2.5px); }
+        100% { -webkit-transform: translate(0px, 0px); }
+        }
+        @keyframes cloud-anim {
+        0% { transform: translate(0px, 2.5px); }
+        100% { transform: translate(0px, 0px); }
+        }
+        .cloudback {
+        -webkit-animation: cloudback-anim 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: cloudback-anim 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes cloudback-anim {
+        0% { -webkit-transform: translate(0px, 0px); }
+        100% { -webkit-transform: translate(0px, 1.5px); }
+        }
+        @keyframes cloudback-anim {
+        0% { transform: translate(0px, 0px); }
+        100% { transform: translate(0px, 1.5px); }
+        }
+        .spark {
+        -webkit-animation: spark-shake-anim 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        animation: spark-shake-anim 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @-webkit-keyframes spark-shake-anim {
+        0% { -webkit-transform: translate(0px, 0px); }
+        10% { -webkit-transform: translate(-0.5px, 0.5px); }
+        12% { -webkit-transform: translate(0px, 0px); }
+        14% { -webkit-transform: translate(-0.5px, 0.5px); }
+        16% { -webkit-transform: translate(0px, 0px); }
+        18% { -webkit-transform: translate(-1.5px, 1px); }
+        20% { -webkit-transform: translate(0px, 0px); }
+        22% { -webkit-transform: translate(-1.5px, 1px); }
+        24% { -webkit-transform: translate(0px, 0px); }
+        26% { -webkit-transform: translate(-1.5px, 1px); }
+        28% { -webkit-transform: translate(0px, 0px); }
+        30% { -webkit-transform: translate(-1px, 2px); }
+        32% { -webkit-transform: translate(0px, 0px); }
+        34% { -webkit-transform: translate(-1px, 2px); }
+        36% { -webkit-transform: translate(0px, 0px); }
+        38% { -webkit-transform: translate(-1px, 2px); }
+        40% { -webkit-transform: translate(0px, 0px); }
+        42% { -webkit-transform: translate(-1px, 1px); }
+        44% { -webkit-transform: translate(0px, 0px); }
+        46% { -webkit-transform: translate(-1px, 1px); }
+        48% { -webkit-transform: translate(0px, 0px); }
+        50% { -webkit-transform: translate(-1px, 1px); }
+        52% { -webkit-transform: translate(0px, 0px); }
+        55% { -webkit-transform: translate(-0.5px, 0.5px); }
+        58% { -webkit-transform: translate(0px, 0px); }
+        61% { -webkit-transform: translate(-0.5px, 0.5px); }
+        64% { -webkit-transform: translate(0px, 0px); }
+        67% { -webkit-transform: translate(-0.5px, 0.5px); }
+        70% { -webkit-transform: translate(0px, 0px); }
+        100% { -webkit-transform: translate(0px, 0px); }
+        }
+        @keyframes spark-shake-anim {
+        0% { transform: translate(0px, 0px); }
+        10% { transform: translate(-0.5px, 0.5px); }
+        12% { transform: translate(0px, 0px); }
+        14% { transform: translate(-0.5px, 0.5px); }
+        16% { transform: translate(0px, 0px); }
+        18% { transform: translate(-1px, 1px); }
+        20% { transform: translate(0px, 0px); }
+        22% { transform: translate(-1px, 1px); }
+        24% { transform: translate(0px, 0px); }
+        26% { transform: translate(-1px, 1px); }
+        28% { transform: translate(0px, 0px); }
+        30% { transform: translate(-1px, 2px); }
+        32% { transform: translate(0px, 0px); }
+        34% { transform: translate(-1px, 2px); }
+        36% { transform: translate(0px, 0px); }
+        38% { transform: translate(-1px, 2px); }
+        40% { transform: translate(0px, 0px); }
+        42% { transform: translate(-1px, 1px); }
+        44% { transform: translate(0px, 0px); }
+        46% { transform: translate(-1px, 1px); }
+        48% { transform: translate(0px, 0px); }
+        50% { transform: translate(-1px, 1px); }
+        52% { transform: translate(0px, 0px); }
+        55% { transform: translate(-0.5px, 0.5px); }
+        58% { transform: translate(0px, 0px); }
+        61% { transform: translate(-0.5px, 0.5px); }
+        64% { transform: translate(0px, 0px); }
+        67% { transform: translate(-0.5px, 0.5px); }
+        70% { transform: translate(0px, 0px); }
+        100% { transform: translate(0px, 0px); }
+        }
+        .rain0 {
+        -webkit-animation: rain0-anim 2s linear infinite;
+        animation: rain0-anim 2s linear infinite;
+        }
+        @-webkit-keyframes rain0-anim {
+        0% { opacity: 0; }
+        5% { -webkit-transform: translate(0px, 0px); opacity: 0; }
+        15% { opacity: 1; }
+        35% { opacity: 1; }
+        50% { -webkit-transform: translate(0px, 7.5px); opacity: 0; }
+        50.01% { -webkit-transform: translate(0px, 0px); opacity: 0; }
+        55% { -webkit-transform: translate(0px, 0px); opacity: 0; }
+        65% { opacity: 1; }
+        85% { opacity: 1; }
+        100% { -webkit-transform: translate(0px, 7.5px); opacity: 0; }
+        }
+  
+        .rain1 {
+        -webkit-animation: rain1-anim 2s linear infinite;
+        animation: rain1-anim 2s linear infinite;
+        }
+        @-webkit-keyframes rain1-anim {
+        0% { -webkit-transform: translate(0px, -3px); opacity: 1; }
+        25% { opacity: 1; }
+        40% { -webkit-transform: translate(0px, 3px); opacity: 0; }
+        40.01% { -webkit-transform: translate(0px, -4.5px); opacity: 0; }
+        50% { -webkit-transform: translate(0px, -3px); opacity: 1; }
+        65% { opacity: 1; }
+        90% { -webkit-transform: translate(0px, 3px); opacity: 0; }
+        90.01% { -webkit-transform: translate(0px, -4.5px); opacity: 0; }
+        100% { -webkit-transform: translate(0px, -3px); opacity: 1; }
+        }
+
+        .rain2 {
+        -webkit-animation: rain2-anim 1.8s linear infinite;
+        animation: rain2-anim 1.8s linear infinite;
+        }
+        @-webkit-keyframes rain2-anim {
+        0% { -webkit-transform: translate(0px, -3px); opacity: 0.8; }
+        10% { opacity: 1; }
+        40% { -webkit-transform: translate(0px, 3px); opacity: 0; }
+        40.01% { -webkit-transform: translate(0px, -6px); opacity: 0; }
+        45% { opacity: 1; }
+        50% { -webkit-transform: translate(0px, -3px); opacity: 0.8; }
+        60% { opacity: 1; }
+        90% { -webkit-transform: translate(0px, 3px); opacity: 0; }
+        90.01% { -webkit-transform: translate(0px, -6px); opacity: 0; }
+        95% { opacity: 1; }
+        100% { -webkit-transform: translate(0px, -3px); opacity: 0.8; }
+        }
+  
+        .rain3 {
+        -webkit-animation: rain3-anim 2s linear infinite;
+        animation: rain3-anim 2s linear infinite;
+        }
+        @-webkit-keyframes rain3-anim {
+        0% { -webkit-transform: translate(0px, -3px); opacity: 1; }
+        15% { opacity: 1; }
+        30% { -webkit-transform: translate(0px, 3px); opacity: 0; }
+        30.01% { -webkit-transform: translate(0px, -6px); opacity: 0; }
+        40% { opacity: 1; }
+        50% { -webkit-transform: translate(0px, -3px); opacity: 1; }
+        65% { opacity: 1; }
+        80% { -webkit-transform: translate(0px, 3px); opacity: 0; }
+        80.01% { -webkit-transform: translate(0px, -6px); opacity: 0; }
+        90% { opacity: 1; }
+        100% { -webkit-transform: translate(0px, -3px); opacity: 1; }
+        }
+
+    ]]>
+  </style>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ico_wt18">
+            <g id="Group" transform="translate(7.068182, 12.244337)">
+                <g id="아이콘" transform="translate(7.295455, 0.000000)"></g>
+                <path class="rain1" d="M39.9545455,43.1192998 C40.8623187,43.1192998 41.6043528,43.8289134 41.6561973,44.7236902 L41.6590909,44.8238452 L41.6590909,68.1192998 C41.6590909,69.0606942 40.8959399,69.8238452 39.9545455,69.8238452 C39.0467722,69.8238452 38.3047381,69.1142316 38.2528936,68.2194547 L38.25,68.1192998 L38.25,44.8238452 C38.25,43.8824507 39.013151,43.1192998 39.9545455,43.1192998 Z" id="Path" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+                <g class="cloudback">
+                    <g id="구름" transform="translate(0.000000, 0.869300)" fill-rule="nonzero">
+                        <path d="M53.5881125,21.3232923 C52.4773513,16.6786856 48.8284934,13.052233 44.155191,11.9482923 C43.4294867,11.7820125 42.6918262,11.6723041 41.9489355,11.6201673 C40.3768772,5.91643004 35.7214741,1.56923349 29.8957581,0.364958974 C25.6075243,-0.552893461 21.1281579,0.314011749 17.4997888,2.76398806 C13.8714197,5.21396437 11.4103975,9.03340374 10.689282,13.333709 C4.36676331,14.0691704 -0.300072505,19.5492936 0.0150568296,25.8681266 C0.330186164,32.1869596 5.51941182,37.1815647 11.8841187,37.2920423 L41.0318459,37.2920423 C45.0124611,37.286326 48.7694335,35.46211 51.2205148,32.3448853 C53.6715961,29.2276606 54.5446247,25.1635555 53.5881125,21.3232923 Z" id="Path" fill="url(#linearGradient-2)"></path>
+                        <path d="M53.5881125,21.3232923 C54.6855897,25.7130358 53.388746,30.3533449 50.1705828,33.5517475 C46.9524196,36.75015 42.2834413,38.0390306 37.8665767,36.9482923 C33.1932744,35.8443516 29.5444165,32.217899 28.4336553,27.5732923 C27.3361781,23.1835488 28.6330218,18.5432397 31.851185,15.3448371 C35.0693482,12.1464346 39.7383265,10.857554 44.155191,11.9482923 C48.8284934,13.052233 52.4773513,16.6786856 53.5881125,21.3232923 Z" id="Path" fill="url(#linearGradient-3)" opacity="0.4"></path>
+                    </g>
+                </g>
+                <g class="cloud">
+                    <path d="M65.5625,13.6704545 L65.3579545,13.6704545 C61.5871568,4.70993881 52.4522856,-0.781215924 42.7700037,0.092383178 C33.0877219,0.96598228 25.0832752,8.00355891 22.9772727,17.4943182 C13.9870481,18.2707478 7.20376882,25.9909609 7.59051283,35.0063595 C7.97725683,44.0217581 15.3967652,51.1326978 24.4204545,51.1363636 L65.0227273,51.1363636 L65.0227273,51.1363636 L65.5909091,51.1363636 C72.4741799,51.4300676 78.964083,47.9252131 82.4933099,42.0082683 C86.0225368,36.0913234 86.0225368,28.7154948 82.4933099,22.7985499 C78.964083,16.8816051 72.4741799,13.3767506 65.5909091,13.6704545 L65.5625,13.6704545 Z" id="Path" fill="url(#linearGradient-4)" fill-rule="nonzero"></path>
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <use id="Path" fill="#A3A5AA" fill-rule="nonzero" opacity="0.05" xlink:href="#path-5"></use>
+                    <path d="M67.0909098,22.3238636 C67.0909098,31.3556073 61.648788,39.4974896 53.3034436,42.9511283 C44.9580992,46.4047671 35.3539825,44.4896193 28.9716428,38.0991472 C22.5893031,31.7086751 20.6863868,22.1021274 24.1506496,13.7611876 C27.6149125,5.42024778 35.7637182,-0.0114936927 44.7954545,-1.82051599e-05 C57.1147883,0.012544752 67.0940518,10.0045239 67.0909098,22.3238636 Z" id="Path" fill="url(#linearGradient-7)" fill-rule="nonzero" opacity="0.35" mask="url(#mask-6)"></path>
+                    <circle id="Oval" fill="url(#linearGradient-8)" fill-rule="nonzero" opacity="0.25" mask="url(#mask-6)" cx="65.5625" cy="32.4034091" r="18.7329545"></circle>
+                </g>
+            </g>
+            <g class="rain2">
+                <path d="M55.5454545,42.8636364 C56.4532278,42.8636364 57.1952619,43.57325 57.2471064,44.4680268 L57.25,44.5681818 L57.25,76.3863636 C57.25,77.3277581 56.486849,78.0909091 55.5454545,78.0909091 C54.6376813,78.0909091 53.8956472,77.3812955 53.8438027,76.4865186 L53.8409091,76.3863636 L53.8409091,44.5681818 C53.8409091,43.6267874 54.6040601,42.8636364 55.5454545,42.8636364 Z" id="Path" fill="url(#linearGradient-9)" fill-rule="nonzero"></path>
+                <path d="M55.5454545,80.9318182 C56.4532278,80.9318182 57.1952619,81.6414318 57.2471064,82.5362086 L57.25,82.6363636 L57.25,87.75 C57.25,88.6913945 56.486849,89.4545455 55.5454545,89.4545455 C54.6376813,89.4545455 53.8956472,88.7449318 53.8438027,87.850155 L53.8409091,87.75 L53.8409091,82.6363636 C53.8409091,81.6949692 54.6040601,80.9318182 55.5454545,80.9318182 Z" id="Path" fill="url(#linearGradient-10)" fill-rule="nonzero"></path>
+            </g>
+            <g class="rain0">
+                <path d="M38.5,50.8181818 C39.4077732,50.8181818 40.1498073,51.5277954 40.2016519,52.4225723 L40.2045455,52.5227273 L40.2045455,65.5909091 C40.2045455,66.5323036 39.4413945,67.2954545 38.5,67.2954545 C37.5922268,67.2954545 36.8501927,66.5858409 36.7983481,65.6910641 L36.7954545,65.5909091 L36.7954545,52.5227273 C36.7954545,51.5813328 37.5586055,50.8181818 38.5,50.8181818 Z" id="Path" fill="url(#linearGradient-11)" fill-rule="nonzero"></path>
+                <path d="M38.5,70.1363636 C39.4077732,70.1363636 40.1498073,70.8459773 40.2016519,71.7407541 L40.2045455,71.8409091 L40.2045455,75.25 C40.2045455,76.1913945 39.4413945,76.9545455 38.5,76.9545455 C37.5922268,76.9545455 36.8501927,76.2449318 36.7983481,75.350155 L36.7954545,75.25 L36.7954545,71.8409091 C36.7954545,70.8995146 37.5586055,70.1363636 38.5,70.1363636 Z" id="Path" fill="url(#linearGradient-13)" fill-rule="nonzero"></path>
+            </g>
+            <path class="rain3" d="M64.0681818,56.5 C64.975955,56.5 65.7179891,57.2096136 65.7698337,58.1043905 L65.7727273,58.2045455 L65.7727273,75.25 C65.7727273,76.1913945 65.0095763,76.9545455 64.0681818,76.9545455 C63.1604086,76.9545455 62.4183745,76.2449318 62.3665299,75.350155 L62.3636364,75.25 L62.3636364,58.2045455 C62.3636364,57.263151 63.1267874,56.5 64.0681818,56.5 Z" id="Path" fill="url(#linearGradient-12)" fill-rule="nonzero"></path>
+            <path class="spark" d="M81.2291946,5.88537065 L56.6288018,30.4632905 C56.5558097,30.5430313 56.5355194,30.6580898 56.5773806,30.7579127 C56.6192418,30.8577356 56.7153849,30.9240548 56.8235674,30.9277315 L70.8317082,30.9277315 L62.8088639,47.4078972 C62.7520177,47.5248626 62.7867443,47.665737 62.8914399,47.7428811 C62.9961355,47.8200253 63.140974,47.811462 63.23585,47.7225186 L86.6901222,25.406876 C86.7688376,25.3315579 86.7945031,25.2162753 86.7551747,25.1146771 C86.7158464,25.0130788 86.6192501,24.9451233 86.5103386,24.942435 L75.2214251,24.942435 L81.6786537,6.17002806 C81.7299299,6.04857405 81.6858788,5.90785078 81.5745025,5.83731247 C81.4631262,5.76677416 81.317077,5.78710055 81.2291946,5.88537065 Z" id="Path" fill="url(#linearGradient-14)" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

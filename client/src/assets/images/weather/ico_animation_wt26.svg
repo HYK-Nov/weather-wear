@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>ico_wt26</title>
+  <defs>
+    <linearGradient x1="3.675758%" y1="24.8449771%" x2="69.0156445%" y2="68.5111255%" id="linearGradient-1">
+      <stop stop-color="#ACAEB3" offset="0%"></stop>
+      <stop stop-color="#96989C" offset="100%"></stop>
+    </linearGradient>
+    <path d="M45.6137378,21.702739 C45.6035313,17.7924864 42.9789792,14.3721925 39.2045583,13.3504663 C38.2637755,6.16242148 32.4197862,0.614068367 25.1926216,0.0473664497 C17.9654569,-0.519335468 11.3280867,4.05031981 9.27842198,11.0038753 C4.06516793,11.2994894 -0.00836168368,15.6174807 -2.56600453e-05,20.8391026 C0.0156635573,26.2639101 4.41609283,30.6541767 9.84092198,30.6572844 L19.9431947,30.6572844 L36.9318311,30.6175117 C39.2383356,30.6175196 41.4500412,29.6997115 43.0788529,28.066636 C44.7076645,26.4335605 45.6196872,24.2194629 45.6137378,21.9129663 L45.6137378,21.702739 Z" id="path-2"></path>
+    <linearGradient x1="-6.95626361%" y1="-6.95626361%" x2="85.8796754%" y2="85.8796754%" id="linearGradient-4">
+      <stop stop-color="#FFCC14" offset="0%"></stop>
+      <stop stop-color="#FFB90A" offset="100%"></stop>
+    </linearGradient>
+    <circle id="path-5" cx="50.9147856" cy="38.3334208" r="28.7102273"></circle>
+    <filter x="-36.6%" y="-36.6%" width="173.1%" height="173.1%" filterUnits="objectBoundingBox" id="filter-6">
+      <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="7" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+    </filter>
+    <linearGradient x1="12.4305298%" y1="12.4305298%" x2="36.7728788%" y2="36.7728788%" id="linearGradient-7">
+      <stop stop-color="#FFFFFF" offset="0%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0.72" offset="25%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0.34" offset="62%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0.09" offset="88%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="42.5697131%" y1="8.88105124%" x2="67.4115754%" y2="66.1113745%" id="linearGradient-8">
+      <stop stop-color="#FFB90A" offset="0%"></stop>
+      <stop stop-color="#FFCC14" offset="48.6724213%"></stop>
+      <stop stop-color="#FFAC14" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="35.7487405%" y1="35.7160689%" x2="65.913214%" y2="65.9232754%" id="linearGradient-9">
+      <stop stop-color="#FFD800" stop-opacity="0" offset="1%"></stop>
+      <stop stop-color="#FFD800" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <style type="text/css">
+    <![CDATA[
+    #cloud {
+    -webkit-animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    }
+    @-webkit-keyframes cloud-anim {
+    0% { -webkit-transform: translate(0, 0px); }
+    100% { -webkit-transform: translate(0, -3px); }
+    }
+    @keyframes cloud-anim {
+    0% { transform: translate(0, 0px); }
+    100% { transform: translate(0, -3px); }
+    }
+    #spark-shake {
+    -webkit-animation: spark-shake-anim 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    animation: spark-shake-anim 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+    @-webkit-keyframes spark-shake-anim {
+    0% { -webkit-transform: translate(0px, 0px); }
+    10% { -webkit-transform: translate(-0.5px, 0.5px); }
+    12% { -webkit-transform: translate(0px, 0px); }
+    14% { -webkit-transform: translate(-0.5px, 0.5px); }
+    16% { -webkit-transform: translate(0px, 0px); }
+    18% { -webkit-transform: translate(-1.5px, 1px); }
+    20% { -webkit-transform: translate(0px, 0px); }
+    22% { -webkit-transform: translate(-1.5px, 1px); }
+    24% { -webkit-transform: translate(0px, 0px); }
+    26% { -webkit-transform: translate(-1.5px, 1px); }
+    28% { -webkit-transform: translate(0px, 0px); }
+    30% { -webkit-transform: translate(-1px, 2px); }
+    32% { -webkit-transform: translate(0px, 0px); }
+    34% { -webkit-transform: translate(-1px, 2px); }
+    36% { -webkit-transform: translate(0px, 0px); }
+    38% { -webkit-transform: translate(-1px, 2px); }
+    40% { -webkit-transform: translate(0px, 0px); }
+    42% { -webkit-transform: translate(-1px, 1px); }
+    44% { -webkit-transform: translate(0px, 0px); }
+    46% { -webkit-transform: translate(-1px, 1px); }
+    48% { -webkit-transform: translate(0px, 0px); }
+    50% { -webkit-transform: translate(-1px, 1px); }
+    52% { -webkit-transform: translate(0px, 0px); }
+    55% { -webkit-transform: translate(-0.5px, 0.5px); }
+    58% { -webkit-transform: translate(0px, 0px); }
+    61% { -webkit-transform: translate(-0.5px, 0.5px); }
+    64% { -webkit-transform: translate(0px, 0px); }
+    67% { -webkit-transform: translate(-0.5px, 0.5px); }
+    70% { -webkit-transform: translate(0px, 0px); }
+    100% { -webkit-transform: translate(0px, 0px); }
+    }
+    @keyframes spark-shake-anim {
+    0% { transform: translate(0px, 0px); }
+    10% { transform: translate(-0.5px, 0.5px); }
+    12% { transform: translate(0px, 0px); }
+    14% { transform: translate(-0.5px, 0.5px); }
+    16% { transform: translate(0px, 0px); }
+    18% { transform: translate(-1px, 1px); }
+    20% { transform: translate(0px, 0px); }
+    22% { transform: translate(-1px, 1px); }
+    24% { transform: translate(0px, 0px); }
+    26% { transform: translate(-1px, 1px); }
+    28% { transform: translate(0px, 0px); }
+    30% { transform: translate(-1px, 2px); }
+    32% { transform: translate(0px, 0px); }
+    34% { transform: translate(-1px, 2px); }
+    36% { transform: translate(0px, 0px); }
+    38% { transform: translate(-1px, 2px); }
+    40% { transform: translate(0px, 0px); }
+    42% { transform: translate(-1px, 1px); }
+    44% { transform: translate(0px, 0px); }
+    46% { transform: translate(-1px, 1px); }
+    48% { transform: translate(0px, 0px); }
+    50% { transform: translate(-1px, 1px); }
+    52% { transform: translate(0px, 0px); }
+    55% { transform: translate(-0.5px, 0.5px); }
+    58% { transform: translate(0px, 0px); }
+    61% { transform: translate(-0.5px, 0.5px); }
+    64% { transform: translate(0px, 0px); }
+    67% { transform: translate(-0.5px, 0.5px); }
+    70% { transform: translate(0px, 0px); }
+    100% { transform: translate(0px, 0px); }
+    }
+
+    #sun-core {
+    -webkit-transform-origin: 54% 42%; -webkit-animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    transform-origin: 54% 42%; animation: sun-core-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    }
+    @-webkit-keyframes sun-core-anim {
+    0% { -webkit-transform: scale(1); }
+    100% { -webkit-transform: scale(0.98); }
+    }
+    @keyframes sun-core-anim {
+    0% { transform: scale(1); }
+    100% { transform: scale(0.98); }
+    }
+    #sun-shine {
+    -webkit-transform-origin: 53% 40%; -webkit-animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    transform-origin: 53% 40%; animation: sun-shine-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    }
+    @-webkit-keyframes sun-shine-anim {
+    0% { -webkit-transform: scale(1); }
+    100% { -webkit-transform: scale(0.94); }
+    }
+    @keyframes sun-shine-anim {
+    0% { transform: scale(1); }
+    100% { transform: scale(0.94); }
+    }
+    #sun-core-inner {
+    -webkit-transform-origin: 54% 42%; -webkit-animation: sun-core-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    transform-origin: 54% 42%; animation: sun-core-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    }
+    @-webkit-keyframes sun-core-inner-anim {
+    0% { -webkit-transform: scale(1) translate(0px, 0px); }
+    100% { -webkit-transform: scale(0.98) translate(0px, 3px); }
+    }
+    @keyframes sun-core-inner-anim {
+    0% { transform: scale(1) translate(0px, 0px); }
+    100% { transform: scale(0.98) translate(0px, 3px); }
+    }
+    ]]>
+  </style>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="ico_wt26">
+      <g id="cloud">
+        <g id="Oval" transform="translate(5.681805, 15.365443)">
+          <mask id="mask-3" fill="white">
+            <use xlink:href="#path-2"></use>
+          </mask>
+          <use id="Mask" fill="url(#linearGradient-1)" fill-rule="nonzero" xlink:href="#path-2"></use>
+          <g fill-rule="nonzero" mask="url(#mask-3)">
+            <g id="sun-core-inner">
+              <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+              <use fill="url(#linearGradient-4)" xlink:href="#path-5"></use>
+            </g>
+          </g>
+        </g>
+      </g>
+      <circle id="Oval" fill="url(#linearGradient-7)" fill-rule="nonzero" opacity="0.15" cx="29.6647727" cy="27.8352273" r="15.3352273"></circle>
+      <path id="spark-shake" d="M4.32954545,48.6022727 C4.18779989,48.7398052 4.14407879,48.9497852 4.2191517,49.1324626 C4.2942246,49.31514 4.47296167,49.4336988 4.67045455,49.4318182 L17.3977273,49.4318182 L10.3465909,63.9034091 C10.2468099,64.1147782 10.3106914,64.3672115 10.4990021,64.5056753 C10.6873129,64.6441391 10.9473116,64.629853 11.1193182,64.4715909 L32.5284091,44.1079545 C32.5871226,44.0486109 32.6051602,43.9601497 32.5743689,43.8825556 C32.5435776,43.8049616 32.4697921,43.7529381 32.3863636,43.75 L21.5568182,43.75 L27.75,25.7443182 C27.7830031,25.6531989 27.747533,25.5514257 27.6650443,25.5005577 C27.5825557,25.4496897 27.4756918,25.4636902 27.4090909,25.5340909 L4.32954545,48.6022727 Z" fill="url(#linearGradient-8)" fill-rule="nonzero"></path>
+      <path id="sun-shine" d="M90.6875,52.3181818 L90.6875,52.2727273 L90.6875,52.2727273 C90.6875,33.4448381 75.4244801,18.1818182 56.5965909,18.1818182 C37.7687017,18.1818182 22.5056818,33.4448381 22.5056818,52.2727273 L22.5056818,52.2727273 L22.5056818,52.3693182 L22.5056818,52.3693182 C22.5056818,71.1972074 37.7687017,86.4602273 56.5965909,86.4602273 C75.4244801,86.4602273 90.6875,71.1972074 90.6875,52.3693182 L90.6875,52.3693182 L90.6875,52.3181818 Z" fill="url(#linearGradient-9)" fill-rule="nonzero" opacity="0.3"></path>
+      <circle id="sun-core" fill="url(#linearGradient-4)" fill-rule="nonzero" cx="56.5965909" cy="51.9943182" r="28.7102273"></circle>
+    </g>
+  </g>
+</svg>

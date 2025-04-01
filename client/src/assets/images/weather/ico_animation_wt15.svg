@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ico_wt15</title>
+    <defs>
+        <linearGradient x1="18.8611111%" y1="18.8611111%" x2="54.7361111%" y2="54.75%" id="linearGradient-1">
+            <stop stop-color="#FFD800" offset="0%"></stop>
+            <stop stop-color="#FFD800" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="21.179433%" y1="65.3259626%" x2="86.5471229%" y2="9.2642013%" id="linearGradient-2">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="22.5333333%" y1="22.5333333%" x2="85.1333333%" y2="85.1333333%" id="linearGradient-3">
+            <stop stop-color="#FFCC14" offset="0%"></stop>
+            <stop stop-color="#FFB90A" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-4" cx="18.5" cy="18.5" r="18.5"></circle>
+        <filter x="-27.8%" y="-41.7%" width="155.6%" height="183.3%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.619607843   0 0 0 0 0.215686275   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <linearGradient x1="-24.8889602%" y1="9.69013299%" x2="63.3983994%" y2="64.8559368%" id="linearGradient-7">
+            <stop stop-color="#E9E9ED" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="29.1981255%" y1="1.58812809%" x2="59.1772976%" y2="71.3486071%" id="linearGradient-8">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="8.53564286%" y1="7.18052109%" x2="39.7615164%" y2="39.4385856%" id="linearGradient-9">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-24.6618646%" y1="10.3102086%" x2="62.7510879%" y2="64.58499%" id="linearGradient-10">
+            <stop stop-color="#E9E9ED" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="7.43326279%" y1="7.40639674%" x2="50.3952231%" y2="50.3810773%" id="linearGradient-11">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="7.17318775%" y1="7.17318775%" x2="39.4297847%" y2="39.4297847%" id="linearGradient-12">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="11.7741058%" y1="5.38358008%" x2="170.706139%" y2="-84.7913863%" id="linearGradient-13">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="20.2890935%" y1="59.6335697%" x2="92.3453753%" y2="0.945626478%" id="linearGradient-14">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="21.1511986%" y1="63.6062679%" x2="87.8893941%" y2="6.97417789%" id="linearGradient-15">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="22.8294799%" y1="90.6707148%" x2="61.1073904%" y2="11.0404726%" id="linearGradient-16">
+            <stop stop-color="#61ADFF" stop-opacity="0.8" offset="0%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+    <![CDATA[
+        .cloud {
+        -webkit-animation: cloud-anim 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: cloud-anim 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes cloud-anim {
+        0% { -webkit-transform: translate(0px, 0px); }
+        100% { -webkit-transform: translate(0px, -1.5px); }
+        }
+        @keyframes cloud-anim {
+        0% { transform: translate(0px, 0px); }
+        100% { transform: translate(0px, -1.5px); }
+        }
+        .suncore {
+        height: 37px;
+        width: 37px;
+        -webkit-transform-origin: 19% 19%;
+        transform-origin: 19% 19%;
+        -webkit-animation: suncore-anim 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: suncore-anim 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes suncore-anim {
+        0% { -webkit-transform: scale(1); }
+        100% { -webkit-transform: scale(0.98); }
+        }
+        @keyframes suncore-anim {
+        0% { transform: scale(1); }
+        100% { transform: scale(0.98); }
+        }
+        .sunshine {
+        height: 45px;
+        width: 45px;
+        -webkit-transform-origin: 30% 30%;
+        transform-origin: 30% 30%;
+        -webkit-animation: sunshine-anim 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: sunshine-anim 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes sunshine-anim {
+        0% { -webkit-transform: scale(1); }
+        100% { -webkit-transform: scale(0.95); }
+        }
+        @keyframes sunshine-anim {
+        0% { transform: scale(1); }
+        100% { transform: scale(0.95); }
+        }
+        .rain0 {
+        -webkit-animation: rain0-anim 1.4s linear infinite;
+        animation: rain0-anim 1.4s linear infinite;
+        }
+        @-webkit-keyframes rain0-anim {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 1;}
+        30% { opacity: 0; }
+        40% { -webkit-transform: translate(-4px, 6px); opacity: 0;}
+        40.1% { -webkit-transform: translate(5px, -8px); opacity: 0;}
+        60% { opacity: 1; }
+        100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes rain0-anim {
+        0% { transform: translate(0px, 0px); opacity: 1;}
+        30% { opacity: 0; }
+        40% { transform: translate(-4px, 6px); opacity: 0;}
+        40.1% { transform: translate(5px, -8px); opacity: 0;}
+        60% { opacity: 1; }
+        100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        .rain1 {
+        -webkit-animation: rain1-anim 1.6s linear infinite;
+        animation: rain1-anim 1.6s linear infinite;
+        }
+        @-webkit-keyframes rain1-anim {
+        0% { -webkit-transform: translate(6px, -12px); opacity: 0;}
+        30% { opacity: 1;}
+        80% { opacity: 1;}
+        100% { -webkit-transform: translate(0px, 0px); opacity: 0;}
+        }
+        @keyframes rain1-anim {
+        0% { transform: translate(6px, -12px); opacity: 0;}
+        30% { opacity: 1;}
+        80% { opacity: 1;}
+        100% { transform: translate(0px, 0px); opacity: 0;}
+        }
+        .rain2 {
+        -webkit-animation: rain2-anim 1.2s linear infinite;
+        animation: rain2-anim 1.2s linear infinite;
+        }
+        @-webkit-keyframes rain2-anim {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 0.5;}
+        50% { -webkit-transform: translate(-3px, 6px); opacity: 1;}
+        85% { -webkit-transform: translate(-6px, 12px); opacity: 0;}
+        85.01% { -webkit-transform: translate(1.5px, -3px); opacity: 0;}
+        100% { -webkit-transform: translate(0px, 0px); opacity: 0.5;}
+        }
+        @keyframes rain2-anim {
+        0% { transform: translate(0px, 0px); opacity: 0.5;}
+        50% { transform: translate(-3px, 6px); opacity: 1;}
+        85% { transform: translate(-6px, 12px); opacity: 0;}
+        85.01% { transform: translate(1.5px, -3px); opacity: 0;}
+        100% { transform: translate(0px, 0px); opacity: 0.5;}
+        }
+
+    ]]>
+  </style>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ico_wt15">
+            <g class="sunshine">
+                <g id="Group" opacity="0.3" transform="translate(9.636364, 7.732955)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+                    <circle id="Oval" cx="22.5" cy="22.5" r="22.5"></circle>
+                </g>
+            </g>
+            <path class="rain1" d="M52.216229,56.7983721 C52.6915908,55.9858116 53.7356582,55.712458 54.5482188,56.1878199 C55.3306845,56.6455758 55.6131448,57.6306909 55.2085185,58.4286131 L55.158771,58.5198097 L37.721271,88.3266279 C37.2459092,89.1391884 36.2018418,89.412542 35.3892812,88.9371801 C34.6068155,88.4794242 34.3243552,87.4943091 34.7289815,86.6963869 L34.778729,86.6051903 L52.216229,56.7983721 Z" id="Path" fill="url(#linearGradient-2)" fill-rule="nonzero" opacity="0.9"></path>
+            
+            <g id="구름" transform="translate(13.045455, 11.142045)">
+                <mask id="mask-5" fill="white">
+                    <use xlink:href="#path-4"></use>
+                </mask>
+                <use class="suncore" id="Mask" fill="url(#linearGradient-3)" fill-rule="nonzero" xlink:href="#path-4"></use>
+            </g>
+            <g class="cloud">
+                <g id="구름" transform="translate(17.310975, 15.363664)" fill-rule="nonzero">
+                    <path d="M54.1165449,12.7556929 L53.9214823,12.7556929 C50.4060058,4.39379721 41.8895792,-0.730486735 32.8628426,0.084832895 C23.836106,0.900152525 16.3736864,7.46768973 14.4104549,16.3244373 C6.00705316,17.0244455 -0.346214495,24.2389994 0.0146373459,32.6718364 C0.375489187,41.1046734 7.32179708,47.7490252 15.7542199,47.7272727 L53.6180515,47.7272727 L53.6180515,47.7272727 L54.1219634,47.7272727 C63.7697957,47.7272727 71.5909091,39.8985764 71.5909091,30.241456 C71.5909091,20.5843357 63.7697957,12.7556929 54.1219634,12.7556929 L54.1165449,12.7556929 Z" id="Path" fill="url(#linearGradient-10)"></path>
+                    <path d="M54.1165449,12.7556929 L53.9214823,12.7556929 C50.4060058,4.39379721 41.8895792,-0.730486735 32.8628426,0.084832895 C23.836106,0.900152525 16.3736864,7.46768973 14.4104549,16.3244373 C6.00705316,17.0244455 -0.346214495,24.2389994 0.0146373459,32.6718364 C0.375489187,41.1046734 7.32179708,47.7490252 15.7542199,47.7272727 L53.6180515,47.7272727 L53.6180515,47.7272727 L54.1219634,47.7272727 C63.7697957,47.7272727 71.5909091,39.8985764 71.5909091,30.241456 C71.5909091,20.5843357 63.7697957,12.7556929 54.1219634,12.7556929 L54.1165449,12.7556929 Z" id="Path" fill="#A3A5AA" opacity="0.05"></path>
+                    <path d="M55.6818182,21.0227273 C55.6818182,32.6332589 46.2696226,42.0454545 34.6590909,42.0454545 C23.0485592,42.0454545 13.6363636,32.6332589 13.6363636,21.0227273 C13.6363636,9.4121956 23.0485592,0 34.6590909,0 C46.2696226,0 55.6818182,9.4121956 55.6818182,21.0227273 Z" id="Path" fill="url(#linearGradient-11)" opacity="0.35"></path>
+                    <circle id="Oval" fill="url(#linearGradient-12)" opacity="0.25" cx="53.9772727" cy="30.1136364" r="17.6136364"></circle>
+                </g>
+            </g>
+            <g class="rain2">
+                <path d="M50.2258119,74.9589844 C50.6940575,74.1423024 51.7356972,73.8598389 52.5523793,74.3280846 C53.3388138,74.7789878 53.6298687,75.761598 53.232228,76.5630243 L53.1832791,76.654652 L50.7628245,80.8762429 C50.2945788,81.6929249 49.2529391,81.9753884 48.4362571,81.5071427 C47.6498226,81.0562394 47.3587677,80.0736293 47.7564084,79.2722029 L47.8053573,79.1805753 L50.2258119,74.9589844 Z" id="Path" fill="url(#linearGradient-13)" fill-rule="nonzero"></path>
+                <path d="M64.8166793,49.6863297 C65.2848849,48.8696247 66.3265108,48.5871101 67.1432158,49.0553157 C67.9296724,49.5061803 68.2207756,50.4887762 67.8231742,51.2902221 L67.7742298,51.3818521 L56.7515025,70.6091248 C56.2832969,71.4258298 55.2416711,71.7083444 54.4249661,71.2401389 C53.6385094,70.7892742 53.3474062,69.8066783 53.7450076,69.0052325 L53.7939521,68.9136024 L64.8166793,49.6863297 Z" id="Path" fill="url(#linearGradient-14)" fill-rule="nonzero"></path>
+            </g>
+            <g class="rain0">
+                <path d="M47.7454149,49.3693118 C48.2161156,48.5540423 49.2586005,48.2747142 50.07387,48.7454149 C50.8589443,49.1986823 51.1470415,50.1821637 50.7469913,50.98239 L50.6977669,51.07387 L35.8341306,76.8181882 C35.3634298,77.6334577 34.320945,77.9127858 33.5056755,77.4420851 C32.7206012,76.9888177 32.432504,76.0053363 32.8325541,75.20511 L32.8817785,75.11363 L47.7454149,49.3693118 Z" id="Path" fill="url(#linearGradient-15)" fill-rule="nonzero"></path>
+                <path d="M29.6205786,80.9519235 C30.1021379,80.1430204 31.1482643,79.8776558 31.9571674,80.359215 C32.7361111,80.8229387 33.0110329,81.8101842 32.6003191,82.6049901 L32.5498759,82.6958037 L28.7885123,89.0139856 C28.3069531,89.8228887 27.2608266,90.0882533 26.4519235,89.6066941 C25.6729798,89.1429704 25.398058,88.1557249 25.8087718,87.360919 L25.859215,87.2701053 L29.6205786,80.9519235 Z" id="Path" fill="url(#linearGradient-16)" fill-rule="nonzero" opacity="0.6"></path>
+            </g>
+        </g>
+    </g>
+</svg>

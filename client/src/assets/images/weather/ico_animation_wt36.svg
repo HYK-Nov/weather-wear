@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>ico_wt36</title>
+  <defs>
+    <linearGradient x1="32023.2479%" y1="-4705.52813%" x2="32023.2479%" y2="-4877.88746%" id="linearGradient-1">
+      <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+      <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+      <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+      <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+      <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+      <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+      <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+      <stop stop-color="#54A1FF" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="27.1755698%" y1="106.723285%" x2="72.8135457%" y2="-6.72207097%" id="linearGradient-2">
+      <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+      <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+      <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+      <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+      <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+      <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+      <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+      <stop stop-color="#54A1FF" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="6395.889%" y1="-879.256476%" x2="6395.889%" y2="-1006.11034%" id="linearGradient-3">
+      <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+      <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+      <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+      <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+      <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+      <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+      <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+      <stop stop-color="#54A1FF" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="7826.48172%" y1="-1088.98058%" x2="7826.48172%" y2="-1218.4466%" id="linearGradient-4">
+      <stop stop-color="#61ADFF" stop-opacity="0.7" offset="0%"></stop>
+      <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+      <stop stop-color="#54A1FF" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="3.675758%" y1="28.7051895%" x2="69.0156445%" y2="65.6704651%" id="linearGradient-5">
+      <stop stop-color="#ACAEB3" offset="0%"></stop>
+      <stop stop-color="#96989C" offset="100%"></stop>
+    </linearGradient>
+    <path d="M57.9547175,23.9692741 C57.947042,20.9177747 56.7276167,17.9942472 54.5645531,15.841839 C52.4014894,13.6894308 49.4719757,12.4844575 46.4204763,12.4920014 L44.8295673,12.4920014 C42.4067918,4.86367857 35.2178651,-0.232050017 27.2176489,0.00814123004 C19.2174328,0.248332477 12.3471579,5.76616181 10.3863854,13.5260923 C4.52744642,13.9383561 -0.0114772443,18.8174507 -4.33536474e-05,24.690865 C0.0156932732,30.8588367 5.02521928,35.8480194 11.1932036,35.8386322 L23.93184,35.8386322 L46.4716127,35.7817741 C49.5240416,35.7787698 52.4499223,34.5617548 54.6040488,32.3991013 C56.7581754,30.2364478 57.9636219,27.305782 57.9547175,24.253365 L57.9547175,23.9692741 Z" id="path-6"></path>
+    <linearGradient x1="87.4521992%" y1="87.451987%" x2="54.6156506%" y2="54.6243518%" id="linearGradient-8">
+      <stop stop-color="#7FAAFF" offset="0%"></stop>
+      <stop stop-color="#7ABEF5" offset="100%"></stop>
+    </linearGradient>
+    <path d="M24.49434,43.7476832 C33.6692771,43.7440472 42.3501968,39.5904241 48.1095493,32.4483415 C53.8689017,25.3062589 56.088536,15.9422761 54.1477491,6.97495594 C68.9045357,10.1696927 79.0681165,23.727112 77.9967871,38.7877012 C76.9254578,53.8482904 64.9451242,65.8305106 49.8847039,66.9042115 C34.8242836,67.9779124 21.2652641,57.8164666 18.0682036,43.0601832 C20.1800121,43.5153174 22.3340441,43.7457665 24.49434,43.7476832 Z" id="path-9"></path>
+    <filter x="-25.0%" y="-25.0%" width="150.0%" height="150.0%" filterUnits="objectBoundingBox" id="filter-10">
+      <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+    </filter>
+    <linearGradient x1="12.4365482%" y1="12.4206853%" x2="50%" y2="50%" id="linearGradient-11">
+      <stop stop-color="#FFFFFF" stop-opacity="0.14" offset="0%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+    </linearGradient>
+    <polygon id="path-12" points="0 0.000113636364 14.1640909 0.000113636364 14.1640909 14.1642045 0 14.1642045"></polygon>
+  </defs>
+  <style type="text/css">
+    <![CDATA[
+    #moon {
+    -webkit-transform-origin: 50.5% 39.5%; -webkit-animation: moon-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    transform-origin: 50.5% 39.5%; animation: moon-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    }
+    @-webkit-keyframes moon-anim {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(8deg); }
+    }
+    @keyframes moon-anim {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(8deg); }
+    }
+
+    #twinkle {
+    -webkit-transform-origin: 7.9% 8%; -webkit-animation: twinkle-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+    transform-origin: 7.9% 8%; animation: twinkle-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+    }
+    @-webkit-keyframes twinkle-anim {
+    0% { -webkit-transform: scale(1); }
+    40% { -webkit-transform: scale(0.6); }
+    100% { -webkit-transform: scale(1); }
+    }
+    @keyframes twinkle-anim {
+    0% { transform: scale(1); }
+    40% { transform: scale(0.6); }
+    100% { transform: scale(1); }
+    }
+
+    #moon-inner {
+    -webkit-transform-origin: 50.5% 39.5%; -webkit-animation: moon-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    transform-origin: 50.5% 39.5%; animation: moon-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    }
+    @-webkit-keyframes moon-inner-anim {
+    0% { -webkit-transform: rotate(0deg) translate(0px, 0px); }
+    100% { -webkit-transform: rotate(8deg) translate(2px, 3px); }
+    }
+    @keyframes moon-inner-anim {
+    0% { transform: rotate(0deg) translate(0px, 0px); }
+    100% { transform: rotate(8deg) translate(2px, 3px); }
+    }
+
+    #cloud {
+    -webkit-animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    }
+    @-webkit-keyframes cloud-anim {
+    0% { -webkit-transform: translate(0, 0px); }
+    100% { -webkit-transform: translate(0, -3px); }
+    }
+    @keyframes cloud-anim {
+    0% { transform: translate(0, 0px); }
+    100% { transform: translate(0, -3px); }
+    }
+    #rain-line-0 {
+    -webkit-animation: rain-line-anim-0 2s linear infinite;
+    animation: rain-line-anim-0 2s linear infinite;
+    }
+    @-webkit-keyframes rain-line-anim-0 {
+    0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+    30% { opacity: 1; }
+    50.9% { -webkit-transform: translate(-4px, 8px); opacity: 0; }
+    51% { -webkit-transform: translate(4px, -8px); opacity: 0; }
+    100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+    }
+    @keyframes rain-line-anim-0 {
+    0% { transform: translate(0px, 0px); opacity: 1; }
+    30% { opacity: 1; }
+    50.9% { transform: translate(-4px, 8px); opacity: 0; }
+    51% { transform: translate(4px, -8px); opacity: 0; }
+    100% { transform: translate(0px, 0px); opacity: 1; }
+    }
+    #rain-line-1 {
+    -webkit-animation: rain-line-anim-1 2s linear infinite;
+    animation: rain-line-anim-1 2s linear infinite;
+    }
+    @-webkit-keyframes rain-line-anim-1 {
+    0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+    10% { opacity: 1; }
+    20% { opacity: 1; }
+    39.9% { -webkit-transform: translate(-3px, 6px); opacity: 0; }
+    40% { -webkit-transform: translate(3px, -6px); opacity: 0; }
+    60% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+    }
+    @keyframes rain-line-anim-1 {
+    0% { transform: translate(0px, 0px); opacity: 1; }
+    10% { opacity: 1; }
+    20% { opacity: 1; }
+    39.9% { transform: translate(-3px, 6px); opacity: 0; }
+    40% { transform: translate(3px, -6px); opacity: 0; }
+    60% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { transform: translate(0px, 0px); opacity: 1; }
+    }
+    #rain-line-2 {
+    -webkit-animation: rain-line-anim-2 1.5s linear infinite;
+    animation: rain-line-anim-2 1.5s linear infinite;
+    }
+    @-webkit-keyframes rain-line-anim-2 {
+    0% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+    20% { opacity: 1; }
+    30.9% { -webkit-transform: translate(-2.5px, 5px); opacity: 0; }
+    41% { -webkit-transform: translate(5px, -10px); opacity: 0; }
+    65% { opacity: 1; }
+    100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+    }
+    @keyframes rain-line-anim-2 {
+    0% { transform: translate(0px, 0px); opacity: 1; }
+    20% { opacity: 1; }
+    30.9% { transform: translate(-2.5px, 5px); opacity: 0; }
+    41% { transform: translate(5px, -10px); opacity: 0; }
+    65% { opacity: 1; }
+    100% { transform: translate(0px, 0px); opacity: 1; }
+    }
+    ]]>
+  </style>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="ico_wt36">
+      <g id="cloud">
+        <path id="rain-line-0" d="M25.3329938,37.6077359 C25.7849838,36.825145 26.7858095,36.55714 27.5684004,37.0091301 C28.3208917,37.443736 28.5976193,38.3857711 28.2159754,39.153313 L28.1670062,39.2445368 L16.0022335,60.3070368 C15.5502434,61.0896277 14.5494178,61.3576327 13.7668268,60.9056426 C13.0143356,60.4710368 12.7376079,59.5290016 13.1192519,58.7614597 L13.168221,58.6702359 L25.3329938,37.6077359 Z" fill="url(#linearGradient-2)" fill-rule="nonzero"></path>
+        <g id="rain-line-1">
+          <path d="M13.923864,70.9203033 C14.3758168,70.1376909 15.3766297,69.8696383 16.1592422,70.3215912 C16.9117541,70.7561613 17.1885265,71.6981833 16.806919,72.4657433 L16.7579542,72.5569694 L13.4340906,78.3126513 C12.9821377,79.0952637 11.9813248,79.3633162 11.1987124,78.9113633 C10.4462004,78.4767932 10.169428,77.5347712 10.5510355,76.7672112 L10.6000003,76.6759851 L13.923864,70.9203033 Z" fill="url(#linearGradient-1)" fill-rule="nonzero"></path>
+          <path d="M30.6170056,42.0056001 C31.0689201,41.2229655 32.0697199,40.9548639 32.8523545,41.4067784 C33.6048877,41.8413115 33.8817063,42.78332 33.5001365,43.5508987 L33.4511762,43.6421272 L19.9341307,67.0512181 C19.4822162,67.8338527 18.4814165,68.1019543 17.6987819,67.6500398 C16.9462486,67.2155067 16.66943,66.2734982 17.0509998,65.5059195 L17.0999602,65.414691 L30.6170056,42.0056001 Z" fill="url(#linearGradient-4)" fill-rule="nonzero"></path>
+        </g>
+        <path id="rain-line-2" d="M37.9123329,43.5455933 C38.3641255,42.7628884 39.3648836,42.4946311 40.1475885,42.9464238 C40.9001894,43.3808398 41.1771545,44.3228052 40.7957042,45.0904432 L40.7467581,45.1816794 L24.1615308,73.9146339 C23.7097381,74.6973388 22.7089801,74.9655962 21.9262752,74.5138035 C21.1736743,74.0793875 20.8967091,73.1374221 21.2781594,72.369784 L21.3271056,72.2785479 L37.9123329,43.5455933 Z" fill="url(#linearGradient-3)" fill-rule="nonzero"></path>
+      </g>
+      <g id="Group" transform="translate(6.250000, 12.500000)">
+        <g id="cloud">
+          <g id="Path" transform="translate(0.170433, 0.525044)">
+            <mask id="mask-7" fill="white">
+              <use xlink:href="#path-6"></use>
+            </mask>
+            <use id="Mask" fill="url(#linearGradient-5)" fill-rule="nonzero" xlink:href="#path-6"></use>
+            <g fill-rule="nonzero" mask="url(#mask-7)">
+              <g id="moon-inner">
+                <use fill="black" fill-opacity="1" filter="url(#filter-10)" xlink:href="#path-9"></use>
+                <use fill="url(#linearGradient-8)" xlink:href="#path-9"></use>
+              </g>
+            </g>
+          </g>
+          <circle id="Oval" fill="url(#linearGradient-11)" fill-rule="nonzero" cx="27.9261364" cy="18.4375" r="17.9090909"></circle>
+        </g>
+        <path id="moon" d="M24.6647727,43.7045455 C33.8397099,43.7009094 42.5206295,39.5472864 48.279982,32.4052038 C54.0393344,25.2631212 56.2589687,15.8991383 54.3181818,6.93181818 C69.0749684,10.126555 79.2385493,23.6839742 78.1672199,38.7445634 C77.0958905,53.8051526 65.115557,65.7873728 50.0551367,66.8610737 C34.9947163,67.9347747 21.4356968,57.7733288 18.2386364,43.0170455 C20.3504448,43.4721797 22.5044768,43.7026287 24.6647727,43.7045455 Z" fill="url(#linearGradient-8)" fill-rule="nonzero"></path>
+        <g id="Group-3" transform="translate(71.022727, 57.386364)">
+          <mask id="mask-13" fill="white">
+            <use xlink:href="#path-12"></use>
+          </mask>
+          <g id="Clip-2"></g>
+          <path id="twinkle" d="M7.08227273,0 C5.40556818,4.04659091 4.04704545,5.40625 -0.000113636364,7.08238636 C4.04704545,8.75852273 5.40556818,10.1176136 7.08227273,14.1642045 C8.75840909,10.1176136 10.1175,8.75852273 14.1640909,7.08238636 C10.1175,5.40625 8.75840909,4.04659091 7.08227273,0" fill="#FFDD1C" mask="url(#mask-13)"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

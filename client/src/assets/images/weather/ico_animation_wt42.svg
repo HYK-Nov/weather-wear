@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ico_wt42</title>
+    <defs>
+        <linearGradient x1="21.179433%" y1="65.3259626%" x2="86.5471229%" y2="9.2642013%" id="linearGradient-1">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="89.982372%" y1="89.9570933%" x2="45.0444802%" y2="45.0167829%" id="linearGradient-2">
+            <stop stop-color="#5686E6" offset="0%"></stop>
+            <stop stop-color="#7ABEF5" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-24.6618646%" y1="10.3102086%" x2="62.7510879%" y2="64.58499%" id="linearGradient-3">
+            <stop stop-color="#E9E9ED" offset="0%"></stop>
+            <stop stop-color="#DEDFE3" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="7.43326279%" y1="7.40639674%" x2="50.3952231%" y2="50.3810773%" id="linearGradient-4">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="7.17318775%" y1="7.17318775%" x2="39.4297847%" y2="39.4297847%" id="linearGradient-5">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="11.7741058%" y1="5.38358008%" x2="170.706139%" y2="-84.7913863%" id="linearGradient-6">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="20.2890935%" y1="59.6335697%" x2="92.3453753%" y2="0.945626478%" id="linearGradient-7">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="21.1511986%" y1="63.6062679%" x2="87.8893941%" y2="6.97417789%" id="linearGradient-8">
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#61ADFF" stop-opacity="0.6" offset="0%"></stop>
+            <stop stop-color="#5DA9FF" stop-opacity="0.73" offset="11%"></stop>
+            <stop stop-color="#5AA6FF" stop-opacity="0.83" offset="23%"></stop>
+            <stop stop-color="#57A4FF" stop-opacity="0.9" offset="36%"></stop>
+            <stop stop-color="#55A2FF" stop-opacity="0.96" offset="50%"></stop>
+            <stop stop-color="#54A1FF" stop-opacity="0.99" offset="68%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="22.8294799%" y1="90.6707148%" x2="61.1073904%" y2="11.0404726%" id="linearGradient-9">
+            <stop stop-color="#61ADFF" stop-opacity="0.8" offset="0%"></stop>
+            <stop stop-color="#54A1FF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <style type="text/css">
+    <![CDATA[
+        .cloud {
+        -webkit-animation: cloud-anim 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: cloud-anim 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes cloud-anim {
+        0% { -webkit-transform: translate(0px, 0px); }
+        100% { -webkit-transform: translate(0px, -1.5px); }
+        }
+        @keyframes cloud-anim {
+        0% { transform: translate(0px, 0px); }
+        100% { transform: translate(0px, -1.5px); }
+        }
+        .moon {
+        height: 37px;
+        width: 37px;
+        -webkit-transform-origin: 27% 27%;
+        transform-origin: 27% 27%;
+        -webkit-animation: moon-anim 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        animation: moon-anim 0.8s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+        }
+        @-webkit-keyframes moon-anim {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(6deg); }
+        }
+        @keyframes moon-anim {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(6deg); }
+        }
+        .rain0 {
+        -webkit-animation: rain0-anim 1.4s linear infinite;
+        animation: rain0-anim 1.4s linear infinite;
+        }
+        @-webkit-keyframes rain0-anim {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 1;}
+        30% { opacity: 0; }
+        40% { -webkit-transform: translate(-4px, 6px); opacity: 0;}
+        40.1% { -webkit-transform: translate(5px, -8px); opacity: 0;}
+        60% { opacity: 1; }
+        100% { -webkit-transform: translate(0px, 0px); opacity: 1; }
+        }
+        @keyframes rain0-anim {
+        0% { transform: translate(0px, 0px); opacity: 1;}
+        30% { opacity: 0; }
+        40% { transform: translate(-4px, 6px); opacity: 0;}
+        40.1% { transform: translate(5px, -8px); opacity: 0;}
+        60% { opacity: 1; }
+        100% { transform: translate(0px, 0px); opacity: 1; }
+        }
+        .rain1 {
+        -webkit-animation: rain1-anim 1.6s linear infinite;
+        animation: rain1-anim 1.6s linear infinite;
+        }
+        @-webkit-keyframes rain1-anim {
+        0% { -webkit-transform: translate(6px, -12px); opacity: 0;}
+        30% { opacity: 1;}
+        80% { opacity: 1;}
+        100% { -webkit-transform: translate(0px, 0px); opacity: 0;}
+        }
+        @keyframes rain1-anim {
+        0% { transform: translate(6px, -12px); opacity: 0;}
+        30% { opacity: 1;}
+        80% { opacity: 1;}
+        100% { transform: translate(0px, 0px); opacity: 0;}
+        }
+        .rain2 {
+        -webkit-animation: rain2-anim 1.2s linear infinite;
+        animation: rain2-anim 1.2s linear infinite;
+        }
+        @-webkit-keyframes rain2-anim {
+        0% { -webkit-transform: translate(0px, 0px); opacity: 0.5;}
+        50% { -webkit-transform: translate(-3px, 6px); opacity: 1;}
+        85% { -webkit-transform: translate(-6px, 12px); opacity: 0;}
+        85.01% { -webkit-transform: translate(1.5px, -3px); opacity: 0;}
+        100% { -webkit-transform: translate(0px, 0px); opacity: 0.5;}
+        }
+        @keyframes rain2-anim {
+        0% { transform: translate(0px, 0px); opacity: 0.5;}
+        50% { transform: translate(-3px, 6px); opacity: 1;}
+        85% { transform: translate(-6px, 12px); opacity: 0;}
+        85.01% { transform: translate(1.5px, -3px); opacity: 0;}
+        100% { transform: translate(0px, 0px); opacity: 0.5;}
+        }
+    ]]>
+  </style>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ico_wt42" fill-rule="nonzero">
+            <g>
+                <path class="rain1" d="M56.216229,56.7983721 C56.6915908,55.9858116 57.7356582,55.712458 58.5482188,56.1878199 C59.3306845,56.6455758 59.6131448,57.6306909 59.2085185,58.4286131 L59.158771,58.5198097 L41.721271,88.3266279 C41.2459092,89.1391884 40.2018418,89.412542 39.3892812,88.9371801 C38.6068155,88.4794242 38.3243552,87.4943091 38.7289815,86.6963869 L38.778729,86.6051903 L56.216229,56.7983721 Z" id="Path" fill="url(#linearGradient-1)" opacity="0.9"></path>
+                <path class="moon" d="M11.4972192,31.7386355 C23.2287881,31.738636 32.740083,22.229661 32.7435755,10.4974613 C32.7418549,8.98557725 32.5807256,7.47808893 32.2628601,6 C42.5897261,8.2406579 49.6989776,17.7324289 48.9452957,28.2732112 C48.1916139,38.8139935 39.8042451,47.1976135 29.2636539,47.9460562 C18.7230627,48.6944989 9.23536455,41.5801115 7,31.2515687 C8.47778323,31.5715776 9.98519293,31.7348361 11.4972192,31.7386355 Z" id="Path" fill="url(#linearGradient-2)"></path>
+                <g class="cloud">
+                    <g id="구름" transform="translate(21.310975, 15.363664)">
+                        <path d="M54.1165449,12.7556929 L53.9214823,12.7556929 C50.4060058,4.39379721 41.8895792,-0.730486735 32.8628426,0.084832895 C23.836106,0.900152525 16.3736864,7.46768973 14.4104549,16.3244373 C6.00705316,17.0244455 -0.346214495,24.2389994 0.0146373459,32.6718364 C0.375489187,41.1046734 7.32179708,47.7490252 15.7542199,47.7272727 L53.6180515,47.7272727 L53.6180515,47.7272727 L54.1219634,47.7272727 C63.7697957,47.7272727 71.5909091,39.8985764 71.5909091,30.241456 C71.5909091,20.5843357 63.7697957,12.7556929 54.1219634,12.7556929 L54.1165449,12.7556929 Z" id="Path" fill="url(#linearGradient-3)"></path>
+                        <path d="M54.1165449,12.7556929 L53.9214823,12.7556929 C50.4060058,4.39379721 41.8895792,-0.730486735 32.8628426,0.084832895 C23.836106,0.900152525 16.3736864,7.46768973 14.4104549,16.3244373 C6.00705316,17.0244455 -0.346214495,24.2389994 0.0146373459,32.6718364 C0.375489187,41.1046734 7.32179708,47.7490252 15.7542199,47.7272727 L53.6180515,47.7272727 L53.6180515,47.7272727 L54.1219634,47.7272727 C63.7697957,47.7272727 71.5909091,39.8985764 71.5909091,30.241456 C71.5909091,20.5843357 63.7697957,12.7556929 54.1219634,12.7556929 L54.1165449,12.7556929 Z" id="Path" fill="#A3A5AA" opacity="0.05"></path>
+                        <path d="M55.6818182,21.0227273 C55.6818182,32.6332589 46.2696226,42.0454545 34.6590909,42.0454545 C23.0485592,42.0454545 13.6363636,32.6332589 13.6363636,21.0227273 C13.6363636,9.4121956 23.0485592,0 34.6590909,0 C46.2696226,0 55.6818182,9.4121956 55.6818182,21.0227273 Z" id="Path" fill="url(#linearGradient-4)" opacity="0.35"></path>
+                        <circle id="Oval" fill="url(#linearGradient-5)" opacity="0.25" cx="53.9772727" cy="30.1136364" r="17.6136364"></circle>
+                    </g>
+                </g>
+                <g class="rain2">
+                    <path d="M54.2258119,74.9589844 C54.6940575,74.1423024 55.7356972,73.8598389 56.5523793,74.3280846 C57.3388138,74.7789878 57.6298687,75.761598 57.232228,76.5630243 L57.1832791,76.654652 L54.7628245,80.8762429 C54.2945788,81.6929249 53.2529391,81.9753884 52.4362571,81.5071427 C51.6498226,81.0562394 51.3587677,80.0736293 51.7564084,79.2722029 L51.8053573,79.1805753 L54.2258119,74.9589844 Z" id="Path" fill="url(#linearGradient-6)"></path>
+                    <path d="M68.8166793,49.6863297 C69.2848849,48.8696247 70.3265108,48.5871101 71.1432158,49.0553157 C71.9296724,49.5061803 72.2207756,50.4887762 71.8231742,51.2902221 L71.7742298,51.3818521 L60.7515025,70.6091248 C60.2832969,71.4258298 59.2416711,71.7083444 58.4249661,71.2401389 C57.6385094,70.7892742 57.3474062,69.8066783 57.7450076,69.0052325 L57.7939521,68.9136024 L68.8166793,49.6863297 Z" id="Path" fill="url(#linearGradient-7)"></path>
+                </g>
+                <g class="rain0">
+                    <path d="M51.7454149,49.3693118 C52.2161156,48.5540423 53.2586005,48.2747142 54.07387,48.7454149 C54.8589443,49.1986823 55.1470415,50.1821637 54.7469913,50.98239 L54.6977669,51.07387 L39.8341306,76.8181882 C39.3634298,77.6334577 38.320945,77.9127858 37.5056755,77.4420851 C36.7206012,76.9888177 36.432504,76.0053363 36.8325541,75.20511 L36.8817785,75.11363 L51.7454149,49.3693118 Z" id="Path" fill="url(#linearGradient-8)"></path>
+                    <path d="M33.6205786,80.9519235 C34.1021379,80.1430204 35.1482643,79.8776558 35.9571674,80.359215 C36.7361111,80.8229387 37.0110329,81.8101842 36.6003191,82.6049901 L36.5498759,82.6958037 L32.7885123,89.0139856 C32.3069531,89.8228887 31.2608266,90.0882533 30.4519235,89.6066941 C29.6729798,89.1429704 29.398058,88.1557249 29.8087718,87.360919 L29.859215,87.2701053 L33.6205786,80.9519235 Z" id="Path" fill="url(#linearGradient-9)" opacity="0.6"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

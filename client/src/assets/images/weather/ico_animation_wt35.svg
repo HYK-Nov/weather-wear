@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>ico_wt35</title>
+  <defs>
+    <linearGradient x1="3.675758%" y1="28.7051895%" x2="69.0156445%" y2="65.6704651%" id="linearGradient-1">
+      <stop stop-color="#ACAEB3" offset="0%"></stop>
+      <stop stop-color="#96989C" offset="100%"></stop>
+    </linearGradient>
+    <path d="M57.9547175,23.9692741 C57.947042,20.9177747 56.7276167,17.9942472 54.5645531,15.841839 C52.4014894,13.6894308 49.4719757,12.4844575 46.4204763,12.4920014 L44.8295673,12.4920014 C42.4067918,4.86367857 35.2178651,-0.232050017 27.2176489,0.00814123004 C19.2174328,0.248332477 12.3471579,5.76616181 10.3863854,13.5260923 C4.52744642,13.9383561 -0.0114772443,18.8174507 -4.33536474e-05,24.690865 C0.0156932732,30.8588367 5.02521928,35.8480194 11.1932036,35.8386322 L23.93184,35.8386322 L46.4716127,35.7817741 C49.5240416,35.7787698 52.4499223,34.5617548 54.6040488,32.3991013 C56.7581754,30.2364478 57.9636219,27.305782 57.9547175,24.253365 L57.9547175,23.9692741 Z" id="path-2"></path>
+    <linearGradient x1="87.4521992%" y1="87.451987%" x2="54.6156506%" y2="54.6243518%" id="linearGradient-4">
+      <stop stop-color="#7FAAFF" offset="0%"></stop>
+      <stop stop-color="#7ABEF5" offset="100%"></stop>
+    </linearGradient>
+    <path d="M24.49434,43.7476832 C33.6692771,43.7440472 42.3501968,39.5904241 48.1095493,32.4483415 C53.8689017,25.3062589 56.088536,15.9422761 54.1477491,6.97495594 C68.9045357,10.1696927 79.0681165,23.727112 77.9967871,38.7877012 C76.9254578,53.8482904 64.9451242,65.8305106 49.8847039,66.9042115 C34.8242836,67.9779124 21.2652641,57.8164666 18.0682036,43.0601832 C20.1800121,43.5153174 22.3340441,43.7457665 24.49434,43.7476832 Z" id="path-5"></path>
+    <filter x="-25.0%" y="-25.0%" width="150.0%" height="150.0%" filterUnits="objectBoundingBox" id="filter-6">
+      <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.3 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+    </filter>
+    <linearGradient x1="12.4365482%" y1="12.4206853%" x2="36.7703046%" y2="36.7703046%" id="linearGradient-7">
+      <stop stop-color="#FFFFFF" offset="0%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0.72" offset="25%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0.34" offset="62%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0.09" offset="88%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+    </linearGradient>
+    <polygon id="path-8" points="0 0.000113636364 14.1640909 0.000113636364 14.1640909 14.1642045 0 14.1642045"></polygon>
+    <linearGradient x1="42.5596427%" y1="8.88105124%" x2="67.4351736%" y2="66.1113745%" id="linearGradient-10">
+      <stop stop-color="#FFB90A" offset="0%"></stop>
+      <stop stop-color="#FFCC14" offset="48.6724213%"></stop>
+      <stop stop-color="#FFAC14" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <style type="text/css">
+    <![CDATA[
+    #cloud {
+    -webkit-animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    animation: cloud-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    }
+    @-webkit-keyframes cloud-anim {
+    0% { -webkit-transform: translate(0, 0px); }
+    100% { -webkit-transform: translate(0, -3px); }
+    }
+    @keyframes cloud-anim {
+    0% { transform: translate(0, 0px); }
+    100% { transform: translate(0, -3px); }
+    }
+    #spark-shake {
+    -webkit-animation: spark-shake-anim 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    animation: spark-shake-anim 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+    @-webkit-keyframes spark-shake-anim {
+    0% { -webkit-transform: translate(0px, 0px); }
+    10% { -webkit-transform: translate(-0.5px, 0.5px); }
+    12% { -webkit-transform: translate(0px, 0px); }
+    14% { -webkit-transform: translate(-0.5px, 0.5px); }
+    16% { -webkit-transform: translate(0px, 0px); }
+    18% { -webkit-transform: translate(-1.5px, 1px); }
+    20% { -webkit-transform: translate(0px, 0px); }
+    22% { -webkit-transform: translate(-1.5px, 1px); }
+    24% { -webkit-transform: translate(0px, 0px); }
+    26% { -webkit-transform: translate(-1.5px, 1px); }
+    28% { -webkit-transform: translate(0px, 0px); }
+    30% { -webkit-transform: translate(-1px, 2px); }
+    32% { -webkit-transform: translate(0px, 0px); }
+    34% { -webkit-transform: translate(-1px, 2px); }
+    36% { -webkit-transform: translate(0px, 0px); }
+    38% { -webkit-transform: translate(-1px, 2px); }
+    40% { -webkit-transform: translate(0px, 0px); }
+    42% { -webkit-transform: translate(-1px, 1px); }
+    44% { -webkit-transform: translate(0px, 0px); }
+    46% { -webkit-transform: translate(-1px, 1px); }
+    48% { -webkit-transform: translate(0px, 0px); }
+    50% { -webkit-transform: translate(-1px, 1px); }
+    52% { -webkit-transform: translate(0px, 0px); }
+    55% { -webkit-transform: translate(-0.5px, 0.5px); }
+    58% { -webkit-transform: translate(0px, 0px); }
+    61% { -webkit-transform: translate(-0.5px, 0.5px); }
+    64% { -webkit-transform: translate(0px, 0px); }
+    67% { -webkit-transform: translate(-0.5px, 0.5px); }
+    70% { -webkit-transform: translate(0px, 0px); }
+    100% { -webkit-transform: translate(0px, 0px); }
+    }
+    @keyframes spark-shake-anim {
+    0% { transform: translate(0px, 0px); }
+    10% { transform: translate(-0.5px, 0.5px); }
+    12% { transform: translate(0px, 0px); }
+    14% { transform: translate(-0.5px, 0.5px); }
+    16% { transform: translate(0px, 0px); }
+    18% { transform: translate(-1px, 1px); }
+    20% { transform: translate(0px, 0px); }
+    22% { transform: translate(-1px, 1px); }
+    24% { transform: translate(0px, 0px); }
+    26% { transform: translate(-1px, 1px); }
+    28% { transform: translate(0px, 0px); }
+    30% { transform: translate(-1px, 2px); }
+    32% { transform: translate(0px, 0px); }
+    34% { transform: translate(-1px, 2px); }
+    36% { transform: translate(0px, 0px); }
+    38% { transform: translate(-1px, 2px); }
+    40% { transform: translate(0px, 0px); }
+    42% { transform: translate(-1px, 1px); }
+    44% { transform: translate(0px, 0px); }
+    46% { transform: translate(-1px, 1px); }
+    48% { transform: translate(0px, 0px); }
+    50% { transform: translate(-1px, 1px); }
+    52% { transform: translate(0px, 0px); }
+    55% { transform: translate(-0.5px, 0.5px); }
+    58% { transform: translate(0px, 0px); }
+    61% { transform: translate(-0.5px, 0.5px); }
+    64% { transform: translate(0px, 0px); }
+    67% { transform: translate(-0.5px, 0.5px); }
+    70% { transform: translate(0px, 0px); }
+    100% { transform: translate(0px, 0px); }
+    }
+
+    #moon {
+    -webkit-transform-origin: 50.5% 39.5%; -webkit-animation: moon-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    transform-origin: 50.5% 39.5%; animation: moon-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    }
+    @-webkit-keyframes moon-anim {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(8deg); }
+    }
+    @keyframes moon-anim {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(8deg); }
+    }
+
+    #twinkle {
+    -webkit-transform-origin: 7.9% 8%; -webkit-animation: twinkle-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+    transform-origin: 7.9% 8%; animation: twinkle-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+    }
+    @-webkit-keyframes twinkle-anim {
+    0% { -webkit-transform: scale(1); }
+    40% { -webkit-transform: scale(0.6); }
+    100% { -webkit-transform: scale(1); }
+    }
+    @keyframes twinkle-anim {
+    0% { transform: scale(1); }
+    40% { transform: scale(0.6); }
+    100% { transform: scale(1); }
+    }
+
+    #moon-inner {
+    -webkit-transform-origin: 50.5% 39.5%; -webkit-animation: moon-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    transform-origin: 50.5% 39.5%; animation: moon-inner-anim 1.5s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    }
+    @-webkit-keyframes moon-inner-anim {
+    0% { -webkit-transform: rotate(0deg) translate(0px, 0); }
+    100% { -webkit-transform: rotate(8deg) translate(3px, 0); }
+    }
+    @keyframes moon-inner-anim {
+    0% { transform: rotate(0deg) translate(0px, 0); }
+    100% { transform: rotate(8deg) translate(3px, 0); }
+    }
+    ]]>
+  </style>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="ico_wt35">
+      <g id="Group" transform="translate(6.250000, 12.500000)">
+        <g id="Path" transform="translate(0.170433, 0.525044)">
+          <g id="cloud">
+            <mask id="mask-3" fill="white">
+              <use xlink:href="#path-2"></use>
+            </mask>
+            <use id="Mask" fill="url(#linearGradient-1)" fill-rule="nonzero" xlink:href="#path-2"></use>
+            <g fill-rule="nonzero" mask="url(#mask-3)">
+              <g id="moon-inner">
+                <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                <use fill="url(#linearGradient-4)" xlink:href="#path-5"></use>
+              </g>
+            </g>
+          </g>
+          <circle id="Oval" fill="url(#linearGradient-7)" fill-rule="nonzero" opacity="0.15" cx="27.9261364" cy="18.4375" r="17.9090909"></circle>
+        </g>
+
+        <path id="moon" d="M24.6647727,43.7045455 C33.8397099,43.7009094 42.5206295,39.5472864 48.279982,32.4052038 C54.0393344,25.2631212 56.2589687,15.8991383 54.3181818,6.93181818 C69.0749684,10.126555 79.2385493,23.6839742 78.1672199,38.7445634 C77.0958905,53.8051526 65.115557,65.7873728 50.0551367,66.8610737 C34.9947163,67.9347747 21.4356968,57.7733288 18.2386364,43.0170455 C20.3504448,43.4721797 22.5044768,43.7026287 24.6647727,43.7045455 Z" fill="url(#linearGradient-4)" fill-rule="nonzero"></path>
+        <g id="Group-3" transform="translate(71.022727, 57.386364)">
+          <mask id="mask-9" fill="white">
+            <use xlink:href="#path-8"></use>
+          </mask>
+          <g id="Clip-2"></g>
+          <path id="twinkle" d="M7.08227273,0 C5.40556818,4.04659091 4.04704545,5.40625 -0.000113636364,7.08238636 C4.04704545,8.75852273 5.40556818,10.1176136 7.08227273,14.1642045 C8.75840909,10.1176136 10.1175,8.75852273 14.1640909,7.08238636 C10.1175,5.40625 8.75840909,4.04659091 7.08227273,0" fill="#FFDD1C" mask="url(#mask-9)"></path>
+        </g>
+      </g>
+      <path id="spark-shake" d="M27.7556818,27.9261364 L6.98863636,48.6818182 C6.86080568,48.8070283 6.8221075,48.9974615 6.89092922,49.1626337 C6.95975094,49.3278058 7.12221881,49.4344198 7.30113636,49.4318182 L18.75,49.4318182 L12.4090909,62.4488636 C12.3071773,62.6409037 12.3617417,62.8786448 12.5371957,63.0070257 C12.7126496,63.1354067 12.9557562,63.1154735 13.1079545,62.9602273 L32.3863636,44.6420455 C32.4425089,44.5890683 32.4604483,44.5070954 32.4315628,44.4355097 C32.4026774,44.3639241 32.3328712,44.3173573 32.2556818,44.3181818 L22.4886364,44.3181818 L28.0681818,28.1193182 C28.0988799,28.0357084 28.0665222,27.9420411 27.9907622,27.8952076 C27.9150021,27.8483741 27.8167499,27.8613008 27.7556818,27.9261364 Z" fill="url(#linearGradient-10)" fill-rule="nonzero"></path>
+    </g>
+  </g>
+</svg>

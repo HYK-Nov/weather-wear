@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>ico_wt6 copy 12</title>
+  <defs>
+    <linearGradient x1="5.24110592%" y1="25.5500618%" x2="69.0156445%" y2="68.7729691%" id="linearGradient-1">
+      <stop stop-color="#C9CACC" offset="0%"></stop>
+      <stop stop-color="#BABBBD" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="6.76652373%" y1="-7.33210297%" x2="48.4161738%" y2="47.8953668%" id="linearGradient-2">
+      <stop stop-color="#FCFCFC" offset="0%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="3.675758%" y1="24.4891542%" x2="69.0156445%" y2="68.7729691%" id="linearGradient-3">
+      <stop stop-color="#ACAEB3" offset="0%"></stop>
+      <stop stop-color="#96989C" offset="100%"></stop>
+    </linearGradient>
+    <path d="M58.109326,12.3441298 C53.3296993,4.10347945 44.2562063,-0.665627114 34.7673178,0.0753680171 C25.2784293,0.816363148 17.0531901,6.93634198 13.6074843,15.8193153 C5.65158622,17.7797781 0.0443760121,24.9032907 7.40612726e-15,33.1065371 C7.40612726e-15,42.96855 8.09882445,50.9573024 18.0894592,50.9573024 L55.6390282,50.9573024 C66.4895768,50.9573024 75.2867555,42.2745565 75.2867555,31.5672281 C75.2207372,21.7397528 67.8569637,13.4990238 58.109326,12.3441298 Z" id="path-4"></path>
+    <filter x="-142.6%" y="-202.6%" width="385.2%" height="505.3%" filterUnits="objectBoundingBox" id="filter-6">
+      <feOffset dx="0" dy="30" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.4 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+    <linearGradient x1="29.2522436%" y1="1.60252679%" x2="59.1468929%" y2="71.326538%" id="linearGradient-7">
+      <stop stop-color="#FFFFFF" offset="0%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="37.455604%" y1="-1.53411204%" x2="52.3193015%" y2="59.3202141%" id="linearGradient-8">
+      <stop stop-color="#FFFFFF" offset="0%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="29.2012741%" y1="2.19505695%" x2="59.1693634%" y2="71.0654373%" id="linearGradient-9">
+      <stop stop-color="#FFFFFF" offset="0%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="37.4247871%" y1="-0.903180019%" x2="52.3249992%" y2="59.2061067%" id="linearGradient-10">
+      <stop stop-color="#FFFFFF" offset="0%"></stop>
+      <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <style type="text/css">
+    <![CDATA[
+    #cloud-front {
+    -webkit-animation: cloud-front-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    animation: cloud-front-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    }
+    @-webkit-keyframes cloud-front-anim {
+    0% { -webkit-transform: translate(0px, 0); }
+    100% { -webkit-transform: translate(8px, 0); }
+    }
+    @keyframes cloud-front-anim {
+    0% { transform: translate(0px, 0); }
+    100% { transform: translate(8px, 0); }
+    }
+    #cloud-back {
+    -webkit-animation: cloud-back-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    animation: cloud-back-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    }
+    @-webkit-keyframes cloud-back-anim {
+    0% { -webkit-transform: translate(0px, 0); }
+    100% { -webkit-transform: translate(-4px, 0); }
+    }
+    @keyframes cloud-back-anim {
+    0% { transform: translate(0px, 0); }
+    100% { transform: translate(-4px, 0); }
+    }
+    #cloud-back-inner {
+    -webkit-animation: cloud-back-inner-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    animation: cloud-back-inner-anim 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) alternate infinite;
+    }
+    @-webkit-keyframes cloud-back-inner-anim {
+    0% { -webkit-transform: translate(0px, 0); }
+    100% { -webkit-transform: translate(12px, 0); }
+    }
+    @keyframes cloud-back-inner-anim {
+    0% { transform: translate(0px, 0); }
+    100% { transform: translate(12px, 0); }
+    }
+    ]]>
+  </style>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="ico_wt7">
+      <g id="cloud-back">>
+        <g id="큰구름" transform="translate(10.227273, 16.000001)" fill-rule="nonzero">
+          <path d="M58.109326,12.3457798 C53.3296993,4.10512941 44.2562063,-0.663977159 34.7673178,0.0770179727 C25.2784293,0.818013104 17.0531901,6.93799194 13.6074843,15.8209653 C5.65158622,17.7814281 0.0443760121,24.9049407 7.40612726e-15,33.108187 C7.40612726e-15,42.9702 8.09882445,50.9589523 18.0894592,50.9589523 L55.6390282,50.9589523 C66.4895768,50.9589523 75.2867555,42.2762065 75.2867555,31.5688781 C75.2207372,21.7414028 67.8569637,13.5006737 58.109326,12.3457798 Z" id="Path" fill="url(#linearGradient-1)"></path>
+          <path d="M61.4655962,24.7959189 C61.4677036,34.8275168 55.433846,43.8725124 46.177826,47.7129012 C36.9218061,51.55329 26.2666193,49.4326983 19.1811599,42.3400336 C12.0957004,35.2473688 9.9754666,24.5795486 13.8091992,15.3113585 C17.6429318,6.0431684 26.675568,-3.70760936e-15 36.6948668,-3.70760936e-15 C43.2639932,-0.00138353911 49.5645384,2.61042504 54.2101011,7.2607118 C58.8556637,11.9109986 61.4655962,18.2187283 61.4655962,24.7959189 Z" id="Path" fill="url(#linearGradient-2)" opacity="0.15"></path>
+        </g>
+        <g id="구름" transform="translate(10.227273, 16.000001)">
+          <mask id="mask-5" fill="white">
+            <use xlink:href="#path-4"></use>
+          </mask>
+          <use id="Mask" fill-opacity="0" fill="url(#linearGradient-3)" fill-rule="nonzero" xlink:href="#path-4"></use>
+          <g id="cloud-back-inner">
+            <g filter="url(#filter-6)" mask="url(#mask-5)" fill-rule="nonzero" id="Path">
+              <g transform="translate(27.643675, 30.293661)">
+                <path d="M53.2924539,21.3628531 C52.1878211,16.7096294 48.5590948,13.0764487 43.9115762,11.9704598 C43.1898757,11.8038715 42.4562851,11.6939595 41.7174931,11.6417261 C40.1541082,5.92740672 35.5243901,1.57214487 29.730816,0.365636078 C25.4662414,-0.553919237 21.0115887,0.314594331 17.4032382,2.76911605 C13.7948877,5.22363777 11.3474436,9.0501633 10.6303066,13.3584468 C4.34267082,14.0952727 -0.298416933,19.5855632 0.0149737575,25.9161194 C0.328364448,32.2466756 5.4889599,37.2505471 11.8185511,37.3612298 L40.8054633,37.3612298 C44.7641165,37.3555028 48.5003608,35.5279024 50.9379189,32.4048944 C53.375477,29.2818863 54.2436888,25.2102412 53.2924539,21.3628531 Z" fill="#DEDFE3"></path>
+                <path d="M41.9415919,12.5966194 C43.0736801,17.8990477 41.4453506,23.4146561 37.6159597,27.2487477 C33.7865688,31.0828394 28.2777229,32.7131678 22.9817956,31.5796899 C16.8328446,30.3054384 12.0280742,25.4947698 10.755385,19.3382706 C9.62039925,14.0353476 11.2477601,8.51790567 15.0779213,4.68304263 C18.9080826,0.848179596 24.4187599,-0.781178895 29.7151812,0.355200085 C35.8641323,1.62945159 40.6689027,6.44012013 41.9415919,12.5966194 L41.9415919,12.5966194 Z" fill="url(#linearGradient-7)" opacity="0.59"></path>
+                <path d="M53.2924539,21.3628531 C54.3838761,25.7607409 53.0941874,30.4096591 49.8937796,33.6139956 C46.6933718,36.8183321 42.0501534,38.1096039 37.6576577,37.016842 C33.0101391,35.9108532 29.3814128,32.2776724 28.27678,27.6244487 C27.1853578,23.226561 28.4750465,18.5776427 31.6754543,15.3733062 C34.8758621,12.1689697 39.5190805,10.8776979 43.9115762,11.9704598 C48.5590948,13.0764487 52.1878211,16.7096294 53.2924539,21.3628531 Z" fill="url(#linearGradient-8)" opacity="0.4"></path>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="cloud-front">
+        <g id="구름" transform="translate(38.068182, 46.113637)" fill-rule="nonzero">
+          <path d="M53.5881125,21.3232923 C52.4773513,16.6786856 48.8284934,13.052233 44.155191,11.9482923 C43.4294867,11.7820125 42.6918262,11.6723041 41.9489355,11.6201673 C40.3768772,5.91643004 35.7214741,1.56923349 29.8957581,0.364958974 C25.6075243,-0.552893461 21.1281579,0.314011749 17.4997888,2.76398806 C13.8714197,5.21396437 11.4103975,9.03340374 10.689282,13.333709 C4.36676331,14.0691704 -0.300072505,19.5492936 0.0150568296,25.8681266 C0.330186164,32.1869596 5.51941182,37.1815647 11.8841187,37.2920423 L41.0318459,37.2920423 C45.0124611,37.286326 48.7694335,35.46211 51.2205148,32.3448853 C53.6715961,29.2276606 54.5446247,25.1635555 53.5881125,21.3232923 Z" id="Path" fill="#DEDFE3"></path>
+          <path d="M42.1742775,12.5732923 C43.3126464,17.8659013 41.6752832,23.3712956 37.8246474,27.1982871 C33.9740116,31.0252786 28.4346034,32.6525879 23.1092952,31.521209 C16.9262307,30.2493172 12.0948041,25.4475573 10.8150542,19.302459 C9.67377179,14.0093563 11.310161,8.50213177 15.1615714,4.67437033 C19.0129818,0.846608893 24.5542316,-0.779732267 29.8800366,0.354542307 C36.0631011,1.62643408 40.8945276,6.42819398 42.1742775,12.5732923 L42.1742775,12.5732923 Z" id="Path" fill="url(#linearGradient-9)" opacity="0.59"></path>
+          <path d="M53.5881125,21.3232923 C54.6855897,25.7130358 53.388746,30.3533449 50.1705828,33.5517475 C46.9524196,36.75015 42.2834413,38.0390306 37.8665767,36.9482923 C33.1932744,35.8443516 29.5444165,32.217899 28.4336553,27.5732923 C27.3361781,23.1835488 28.6330218,18.5432397 31.851185,15.3448371 C35.0693482,12.1464346 39.7383265,10.857554 44.155191,11.9482923 C48.8284934,13.052233 52.4773513,16.6786856 53.5881125,21.3232923 Z" id="Path" fill="url(#linearGradient-10)" opacity="0.4"></path>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
