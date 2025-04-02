@@ -43,3 +43,33 @@ export type TWeekTemp = {
   taMax10Low: number; // 10일 후 예상최고기온 하한 범위
   taMax10High: number; // 10일 후 예상최고기온 상한 범위
 };
+
+type WeatherCategory =
+  | "POP"
+  | "PTY"
+  | "PCP"
+  | "REH"
+  | "SNO"
+  | "SKY"
+  | "TMP"
+  | "TMN"
+  | "TMX"
+  | "UUU"
+  | "VVV"
+  | "WAV"
+  | "VEC"
+  | "WSD"
+  | "RN1"
+  | "T1H";
+
+export type TNowWeather = {
+  baseDate: string; // 발표 일자
+  baseTime: string; // 발표 시각
+  category: WeatherCategory; // 예보 코드
+  nx: number; // 예보 지점 X값
+  ny: number; // 예보 지점 Y값
+  obsrValue: string; // 단기 예보 값
+  fcstDate: string; // 예보 일자
+  fcstTime: string; // 예보 시각
+  fcstValue: string; // 예보 값
+};

@@ -1,8 +1,8 @@
 import { useLocationStore } from "@/stores/weatherStore.ts";
 import { useEffect, useState } from "react";
-import { getMidCode } from "@/features/excelToJson.ts";
 import { TWeekTemp } from "@/types/weather.ts";
-import WeekItem from "@/components/home/WeekItem.tsx";
+import WeeklyItem from "@/components/home/WeeklyItem.tsx";
+import { getMidCode } from "@/features/apiCode.ts";
 
 export default function WeeklyWeather() {
   const { region } = useLocationStore();
@@ -11,12 +11,14 @@ export default function WeeklyWeather() {
   const [weekTemp, setWeekTemp] = useState<TWeekTemp>();
 
   useEffect(() => {
-    (async () => {
-      const code = await getMidCode(region);
-      if (code) {
-        setMidCode(code);
-      }
-    })();
+    if (region) {
+      (async () => {
+        const code = await getMidCode(region);
+        if (code) {
+          setMidCode(code);
+        }
+      })();
+    }
   }, [region]);
 
   useEffect(() => {
@@ -40,19 +42,21 @@ export default function WeeklyWeather() {
       }
     };
 
-    tempData().then((data) => setWeekTemp(data));
-    rainData().then((data) => setWeekRain(data));
+    if (midCode) {
+      tempData().then((data) => setWeekTemp(data));
+      rainData().then((data) => setWeekRain(data));
+    }
   }, [midCode]);
 
   return (
     <div className={"col-span-2 rounded-lg border p-5"}>
-      <p className={"text-2xl font-bold"}>주간 날씨</p>
-      <div className={"flex flex-col"}>
+      <p className={"mb-2 text-2xl font-bold"}>주간예보</p>
+      <div className={"flex flex-col px-2"}>
         {weekTemp &&
           Object.entries(weekTemp).map(([key, value]) => (
-            <WeekItem
+            <WeeklyItem
               key={key}
-              day={key}
+              later={key}
               tempMin={value.min}
               tempMax={value.max}
             />

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import tempWear from "@/assets/data/tempWear.json";
 
 export default function RecommendWear() {
-  const { weather } = useWeatherStore();
+  const { aprTemp } = useWeatherStore();
   const [wearItems, setWearItems] = useState<{ name: string; url: string }[]>(
     [],
   );
@@ -28,27 +28,23 @@ export default function RecommendWear() {
         return range.category;
       }
     }
-
     return [];
   };
 
   useEffect(() => {
-    if (!weather) return;
+    if (!aprTemp) return;
 
-    const temp = Number(
-      weather?.find((item) => item.category == "T1H")?.fcstValue,
-    );
-    const result = getTempWearList(temp || 0);
+    const result = getTempWearList(aprTemp || 0);
 
     setWearItems(result);
-  }, [weather]);
+  }, [aprTemp]);
 
   return (
     <div className="rounded-lg border p-5">
-      <p className="pb-5 text-xl font-bold">오늘 뭐 입지?</p>
+      <p className="pb-5 text-2xl font-bold">오늘 뭐 입냐</p>
 
       <div className="grid grid-cols-5 gap-5">
-        {weather
+        {wearItems
           ? [...Array(5)].map((_, i) => (
               <div key={i} className="relative">
                 {!imageLoaded[i] && <Skeleton className="aspect-5/6 rounded" />}

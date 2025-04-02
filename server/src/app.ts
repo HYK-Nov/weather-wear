@@ -5,7 +5,7 @@ import cors from "cors";
 import dayjs from "dayjs";
 import "dayjs/locale/ko.js";
 import LocalizedFormat from "dayjs/plugin/localizedFormat";
-import {TWeekTemp} from "./types/weather";
+import {TNowWeather, TWeekTemp} from "./types/weather";
 
 dayjs.locale("ko");
 dayjs.extend(LocalizedFormat);
@@ -22,38 +22,72 @@ app.get("/api/weather/now", (req, res) => {
     .subtract(NOW.minute() > 30 ? 0 : 1, "hours")
     .format("HH30");
 
-  const url = `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?numOfRows=60&base_time=${basetime}&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_API_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.format("YYYYMMDD")}`;
-
-  const fetchWeather = (retryCount = 1) => {
-    request(url, (error, response, body) => {
-      if (error || response.statusCode !== 200) {
-        console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
-
-        if (retryCount < 2) {
-          return fetchWeather(retryCount + 1); // 재시도
-        } else {
-          return res.status(500).send({ error: "Failed to fetch weather data" }); // 최종 실패 응답
-        }
-      }
-
-      try {
-        const data = JSON.parse(body).response.body.items.item;
-        const filteredData = data.reduce((acc: any[], item: { category: any }) => {
-          if (!acc.some(el => el.category === item.category)) {
-            acc.push(item);
+  const fetchNowWeather = (retryCount = 1): Promise<any[]> => {
+    return new Promise((resolve, reject) => {
+      request(
+        `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?numOfRows=60&base_time=${basetime}&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_API_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.format("YYYYMMDD")}`,
+        (error, response, body) => {
+          if (error || response.statusCode !== 200) {
+            console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
+            if (retryCount < 2) return resolve(fetchNowWeather(retryCount + 1)); // 재시도
+            return reject("Failed to fetch weather data");
           }
-          return acc;
-        }, []);
 
-        res.send(filteredData);
-      } catch (e) {
-        console.error("JSON 파싱 오류:", e);
-        res.status(500).send({ error: "Failed to process weather data" });
-      }
+          try {
+            const data = JSON.parse(body).response.body.items.item;
+            const filteredData = data.reduce((acc: any[], item: { category: any }) => {
+              if (!acc.some(el => el.category === item.category)) {
+                acc.push(item);
+              }
+              return acc;
+            }, []);
+            resolve(filteredData);
+          } catch (e) {
+            console.error("JSON 파싱 오류:", e);
+            reject("Failed to process weather data");
+          }
+        }
+      );
     });
   };
 
-  fetchWeather();
+  const fetchNowTempMinMax = (retryCount = 1): Promise<{ TMX: string | null; TMN: string | null }> => {
+    return new Promise((resolve, reject) => {
+      request(
+        `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=290&base_time=${NOW.hour() < 2 ? '23' : '02'}00&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_API_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.subtract(NOW.hour() < 2 ? 1 : 0, 'days').format("YYYYMMDD")}`,
+        (error, response, body) => {
+          if (error || response.statusCode !== 200) {
+            console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
+            if (retryCount < 2) return resolve(fetchNowTempMinMax(retryCount + 1)); // 재시도
+            return reject("Failed to fetch weather data");
+          }
+
+          try {
+            const data: TNowWeather[] = JSON.parse(body).response.body.items.item;
+            const firstTMX = data.find(item => item.fcstDate === NOW.format('YYYYMMDD') && item.category === 'TMX');
+            const firstTMN = data.find(item => item.fcstDate === NOW.format('YYYYMMDD') && item.category === 'TMN');
+
+            resolve({
+              TMX: firstTMX ? firstTMX.fcstValue : null,
+              TMN: firstTMN ? firstTMN.fcstValue : null
+            });
+          } catch (e) {
+            console.error("JSON 파싱 오류:", e);
+            reject("Failed to process weather data");
+          }
+        }
+      );
+    });
+  };
+
+  Promise.all([fetchNowWeather(), fetchNowTempMinMax()])
+    .then(([nowData, tempData]) => {
+      const mergedData = { now: nowData, temp: tempData };
+      res.send(mergedData);
+    })
+    .catch(error => {
+      console.error("날씨 데이터를 가져오는 중 오류 발생:", error);
+    });
 });
 
 app.get("/api/weather/week/temp", (req, res) => {

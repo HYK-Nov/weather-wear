@@ -23,7 +23,7 @@ export default function CurLocation() {
 
   return (
     <div className="flex items-center gap-x-2">
-      <p className={"text-2xl font-bold text-neutral-700"}>
+      <p className={"text-2xl font-bold"}>
         {navigator.geolocation ? curDistrict : "위치 정보를 지원하지 않음"}
       </p>
       <button onClick={getCurrentDistrict}>

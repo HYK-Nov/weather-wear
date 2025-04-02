@@ -2,8 +2,10 @@ import { create } from "zustand";
 import { TNowWeather } from "@/types/weather.ts";
 
 type WeatherStore = {
-  weather: TNowWeather[] | null;
-  setWeather: (data: TNowWeather[]) => void;
+  nowWeather: TNowWeather[] | null;
+  setNowWeather: (data: TNowWeather[]) => void;
+  aprTemp: number;
+  setAprTemp: (temp: number) => void;
 };
 
 type LocationStore = {
@@ -14,8 +16,10 @@ type LocationStore = {
 };
 
 export const useWeatherStore = create<WeatherStore>((set) => ({
-  weather: null,
-  setWeather: (data: TNowWeather[]) => set(() => ({ weather: data })),
+  nowWeather: null,
+  setNowWeather: (data: TNowWeather[]) => set(() => ({ nowWeather: data })),
+  aprTemp: 0,
+  setAprTemp: (temp: number) => set(() => ({ aprTemp: temp })),
 }));
 
 export const useLocationStore = create<LocationStore>((set) => ({
