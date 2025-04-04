@@ -3,7 +3,7 @@ import midCodeExcel from "@/assets/data/mid_code_data.xlsx";
 import * as XLSX from "xlsx";
 
 // xlsx -> json
-export const excelToJson = async (data: "district" | "mid") => {
+export const excel = async (data: "district" | "mid") => {
   const response = await fetch(
     data === "district" ? districtExcel : midCodeExcel,
   );

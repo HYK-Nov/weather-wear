@@ -13,6 +13,8 @@ import "dayjs/locale/ko.js";
 import LocalizedFormat from "dayjs/plugin/localizedFormat";
 import { getNxNy } from "@/features/apiCode.ts";
 import { getAprTemp } from "@/features/weather.ts";
+import AnotherInfo from "@/components/home/Today/AnotherInfo.tsx";
+import { cn } from "@/lib/utils.ts";
 
 dayjs.locale("ko");
 dayjs.extend(LocalizedFormat);
@@ -30,37 +32,20 @@ const WeatherIcon: Record<string, { icon: React.ElementType; style: string }> =
     눈날림: { icon: TbCloudSnow, style: "text-slate-200" },
   };
 
-const directions = [
-  "북",
-  "북북동",
-  "북동",
-  "동북동",
-  "동",
-  "동남동",
-  "남동",
-  "남남동",
-  "남",
-  "남남서",
-  "남서",
-  "서남서",
-  "서",
-  "서북서",
-  "북서",
-  "북북서",
-];
-
 export default function TodayWeather() {
   const { setAprTemp } = useWeatherStore();
   const { code } = useLocationStore();
-
-  const [taValue, setTaValue] = useState(""); // 기온
-  const [skyValue, setSkyValue] = useState(""); // 하늘 상태
-  const [ptyValue, setPtyValue] = useState(""); // 강수 형태
-  const [wsValue, setWsValue] = useState(""); // 풍속
-  const [hmValue, setHmValue] = useState(""); // 습도
-  const [aprTempValue, setAprTempValue] = useState<number>(); // 체감온도
-  const [tmn, setTmn] = useState<number>(); // 최저 기온
-  const [tmx, setTmx] = useState<number>(); // 최고 기온
+  const [weatherInfo, setWeatherInfo] = useState({
+    ta: "", // 기온
+    sky: "", // 하늘 상태
+    pty: "", // 강수 형태
+    ws: 0, // 풍속
+    wd: "", // 풍향
+    hm: "", // 습도
+    aprTemp: 0, // 체감온도
+    tmn: 0, // 최저 기온
+    tmx: 0, // 최고 기온
+  });
 
   useEffect(() => {
     (async () => {
@@ -73,33 +58,60 @@ export default function TodayWeather() {
         ).then((res) => res.json());
 
         if (data) {
-          console.log(data);
-          setTaValue(
-            data.now.find((item: TNowWeather) => item.category == "T1H")!
+          setWeatherInfo((prev) => ({
+            ...prev,
+            // 기온
+            ta: data.now.find((item: TNowWeather) => item.category == "T1H")!
               .fcstValue,
-          );
-          setSkyValue(
-            SkyCode[
+            // 하늘 상태
+            sky: SkyCode[
               data.now.find((item: TNowWeather) => item.category === "SKY")!
                 .fcstValue
             ],
-          );
-          setPtyValue(
-            PtyCode[
+            // 강수 형태
+            pty: PtyCode[
               data.now.find((item: TNowWeather) => item.category === "PTY")!
                 .fcstValue
             ],
-          );
-          setWsValue(
-            data.now.find((item: TNowWeather) => item.category == "WSD")!
+            // 습도
+            hm: data.now.find((item: TNowWeather) => item.category == "REH")!
               .fcstValue,
-          );
-          setHmValue(
-            data.now.find((item: TNowWeather) => item.category == "REH")!
-              .fcstValue,
-          );
-          setTmn(data.temp.TMN);
-          setTmx(data.temp.TMX);
+            // 최저 기온
+            tmn: data.temp.TMN,
+            // 최고 기온
+            tmx: data.temp.TMX,
+          }));
+
+          // 풍속
+          const uuu = data.now.find(
+            (item: TNowWeather) => item.category == "UUU",
+          )!.fcstValue;
+          const vvv = data.now.find(
+            (item: TNowWeather) => item.category === "VVV",
+          )!.fcstValue;
+          setWeatherInfo((prev) => ({
+            ...prev,
+            ws: Math.sqrt(uuu ** 2 + vvv ** 2),
+          }));
+
+          // 풍향
+          const directions = [
+            "북",
+            "북동",
+            "동",
+            "남동",
+            "남",
+            "남서",
+            "서",
+            "북서",
+          ];
+          const vec = data.now.find(
+            (item: TNowWeather) => item.category == "WSD",
+          )!.fcstValue;
+          setWeatherInfo((prev) => ({
+            ...prev,
+            wd: directions[Math.round(vec / 45) % 8],
+          }));
         }
       } catch (error) {
         console.error(error);
@@ -107,69 +119,72 @@ export default function TodayWeather() {
     })();
   }, [code]);
 
+  // 체감 온도
   useEffect(() => {
-    if (taValue && wsValue && hmValue) {
+    if (weatherInfo.ta && weatherInfo.ws && weatherInfo.hm) {
       const temp = getAprTemp(
-        Number(taValue),
-        Number(wsValue),
-        Number(hmValue),
+        Number(weatherInfo.ta),
+        Number(weatherInfo.ws),
+        Number(weatherInfo.hm),
       );
+      setWeatherInfo((prev) => ({
+        ...prev,
+        aprTemp: temp,
+      }));
       setAprTemp(temp);
-      setAprTempValue(temp);
     }
-  }, [taValue, wsValue, hmValue]);
+  }, [weatherInfo.ta, weatherInfo.ws, weatherInfo.hm]);
 
-  const weatherKey = ptyValue && WeatherIcon[ptyValue] ? ptyValue : skyValue;
+  const weatherKey =
+    weatherInfo.pty && WeatherIcon[weatherInfo.pty]
+      ? weatherInfo.pty
+      : weatherInfo.sky;
   const IconComponent =
     WeatherIcon[weatherKey as keyof typeof WeatherIcon]?.icon || TbQuestionMark;
   const iconStyle =
     WeatherIcon[weatherKey as keyof typeof WeatherIcon]?.style || "";
 
   return (
-    <div className={"flex flex-col items-center gap-2"}>
-      <p
-        className={
-          "inline rounded-full border px-2 py-1 text-sm font-bold text-neutral-500"
-        }
-      >{`${dayjs().format("MM.DD")} 기준`}</p>
-      {taValue && (
+    <div
+      className={cn(
+        "grid grid-cols-1 justify-between gap-2 p-7 lg:grid-cols-2",
+      )}
+    >
+      {weatherInfo.ta && (
         <>
-          <div className={"flex items-center gap-2"}>
-            <IconComponent className={`size-20 ${iconStyle}`} />
+          <div className={"flex gap-3"}>
             {/* 현재 기온 */}
-            <p className={"text-6xl font-bold"}>{taValue}°</p>
-          </div>
-          <div className={"flex flex-col items-center"}>
-            <p className={"text-lg font-bold"}>{skyValue}</p>
-            <div className={"flex gap-2"}>
-              <p>
-                최저&nbsp;
-                <span className={"text-lg font-bold text-blue-500"}>
-                  {Math.floor(tmn as number)}°
-                </span>
+            <div className={"flex items-center gap-2"}>
+              <IconComponent className={`size-20 ${iconStyle}`} />
+              <p className={"text-6xl font-bold"}>{weatherInfo.ta}°</p>
+            </div>
+            {/* 최저, 최고 기온 */}
+            <div className={"flex items-center gap-3"}>
+              <p className={"text-lg font-bold"}>
+                {weatherInfo.pty !== "없음" ? weatherInfo.pty : weatherInfo.sky}
               </p>
-              <p>
-                최고&nbsp;
-                <span className={"text-lg font-bold text-rose-500"}>
-                  {Math.floor(tmx as number)}°
-                </span>
-              </p>
+              <div className={"flex flex-col"}>
+                <p>
+                  최고&nbsp;
+                  <span className={"text-xl font-bold text-rose-500"}>
+                    {Math.floor(weatherInfo.tmx as number)}°
+                  </span>
+                </p>
+                <p>
+                  최저&nbsp;
+                  <span className={"text-xl font-bold text-blue-500"}>
+                    {Math.floor(weatherInfo.tmn as number)}°
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
-          <div className={"mt-3 grid grid-cols-3 gap-x-3"}>
-            <div className={"flex flex-col rounded border p-3 font-bold"}>
-              <p className={"text-sm text-neutral-700"}>체감</p>
-              <p className={"text-xl"}>{aprTempValue}°</p>
-            </div>
-            <div className={"flex flex-col rounded border p-3 font-bold"}>
-              <p className={"text-sm text-neutral-700"}>습도</p>
-              <p className={"text-xl"}>{hmValue}%</p>
-            </div>
-            <div className={"flex flex-col rounded border p-3 font-bold"}>
-              <p className={"text-sm text-neutral-700"}>체감</p>
-              <p className={"text-xl"}>{aprTempValue}°</p>
-            </div>
-          </div>
+          <AnotherInfo
+            hm={weatherInfo.hm}
+            aprTemp={weatherInfo.aprTemp}
+            wd={weatherInfo.wd}
+            ws={weatherInfo.ws}
+          />
         </>
       )}
     </div>

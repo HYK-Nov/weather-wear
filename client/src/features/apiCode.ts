@@ -1,5 +1,5 @@
 import { TDistrict } from "@/types/coord.ts";
-import { excelToJson } from "@/features/excelToJson.ts";
+import { excel } from "@/features/excel.ts";
 
 const includesArray = (mainArr: string[], subArr: string[]) => {
   return (
@@ -12,7 +12,7 @@ const includesArray = (mainArr: string[], subArr: string[]) => {
 };
 
 export const getNxNy = async (code: string) => {
-  const data = (await excelToJson("district")) as TDistrict[];
+  const data = (await excel("district")) as TDistrict[];
 
   if (data) {
     return data.find((item) => code == item["행정구역코드"]);
@@ -20,7 +20,7 @@ export const getNxNy = async (code: string) => {
 };
 
 export const getMidCode = async (region: string[]) => {
-  const data = (await excelToJson("mid")) as [[string, string]];
+  const data = (await excel("mid")) as [[string, string]];
   const result = data.find((item) => {
     return includesArray(region, item);
   });
@@ -44,6 +44,8 @@ const rainRegions = [
 ];
 
 export const getRainCode = async (region: string[]) => {
+  if (region.length == 0) return;
+
   const gangwonYeongdong = [
     "강릉시",
     "속초시",
@@ -53,11 +55,17 @@ export const getRainCode = async (region: string[]) => {
     "양양군",
   ];
 
-  if (region[0].includes("강원")) {
+  const trimRegion = region[0].replace(/특별|광역|시|자치/g, "").trim();
+
+  if (trimRegion.includes("강원")) {
     if (gangwonYeongdong.includes(region[1])) {
       return rainRegions[2].code;
     } else {
       return rainRegions[1].code;
     }
   }
+
+  return rainRegions.find((item) => {
+    return item.name.includes(trimRegion);
+  })?.code;
 };
