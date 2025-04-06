@@ -34,14 +34,20 @@ app.get("/api/weather/week", (req, res) => {
   const ny = req.query.ny?.toString();
 
   Promise.all([fetchRecentlyTA(1, nx!, ny!), fetchWeekTA(1, regId1!), fetchWeekPOP(1, regId2!)]).then(([weather1, weather2, weather3]) => {
-    const weather3Obj = weather3 as Record<string, any>;
     const weather2Obj = weather2 as Record<string, any>;
+    const weather3Obj = weather3 as Record<string, any>;
 
     const mergedWeather = Object.keys(weather2Obj).reduce((acc, key) => {
-      acc[key] = {
-        ...weather2Obj[key],
-        ...weather3Obj[key],
-      };
+      const weather3 = weather3Obj[key];
+
+      // weather3가 존재하고 amWf, pmWf 둘 다 유효한 경우에만 병합
+      if (weather3?.amWf !== "" && weather3?.pmWf !== "") {
+        acc[key] = {
+          ...weather2Obj[key],
+          ...weather3,
+        };
+      }
+
       return acc;
     }, {} as Record<string, any>);
 
@@ -66,7 +72,7 @@ app.get("/api/weather/timeline", (req, res) => {
 
 app.get("/api/air/now", (req, res) => {
   const sidoName = encodeURIComponent(req.query.sido?.toString() || "");
-  const stationName = req.query.station?.toString() || "";
+  const stationName = req.query.station?.toString().split(" ") || [];
 
   const fetchAirInfo = (retryCount = 1) => {
     request(`http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?serviceKey=${process.env.WEATHER_API_KEY}&returnType=json&numOfRows=200&pageNo=1&sidoName=${sidoName}&ver=1.3`, (error, response, body) => {
@@ -83,9 +89,11 @@ app.get("/api/air/now", (req, res) => {
       try {
         const data: TNowAir[] = JSON.parse(body).response.body.items;
 
-        const filteredData = data.find((item) => {
-          return item.stationName.includes(stationName);
-        });
+        const filteredData = data.find((item) =>
+          stationName.some((name) =>
+            name.includes(item.stationName) || item.stationName.includes(name)
+          )
+        );
 
         res.send(filteredData);
       } catch (e) {

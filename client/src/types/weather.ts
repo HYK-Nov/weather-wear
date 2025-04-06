@@ -140,3 +140,23 @@ export type TDayTemp = {
 export type TWeekTemp = {
   [day: string]: TDayTemp;
 };
+
+type TWeatherItem = {
+  TMP: string;
+  UUU: string;
+  VVV: string;
+  VEC: string;
+  WSD: string;
+  SKY: string;
+  PTY: string;
+  POP: string;
+  WAV: string;
+  PCP: string;
+  REH: string;
+  SNO: string;
+  TMN: string;
+  TMX: string;
+  [key: string]: string;
+};
+
+export type TWeatherForecast = Record<string, Record<string, TWeatherItem>>;

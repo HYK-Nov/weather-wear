@@ -57,7 +57,7 @@ export const fetchRecentlyTimeline = (retryCount = 1, nx: string, ny: string): P
 
   return new Promise((resolve, reject) => {
     request(
-      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=336&base_time=${baseTime}&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_API_KEY}&pageNo=1&dataType=JSON&base_date=${baseDate}`,
+      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=420&base_time=${baseTime}&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_API_KEY}&pageNo=1&dataType=JSON&base_date=${baseDate}`,
       (error, response, body) => {
         if (error || response.statusCode !== 200) {
           console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
@@ -150,34 +150,111 @@ export const fetchRecentlyTA = (retryCount = 1, nx: string, ny: string) => {
             (item) =>
               dayjs(item.fcstDate).diff(NOW, "day") >= 0 &&
               dayjs(item.fcstDate).diff(NOW, "day") < 4 &&
-              (item.category === "TMX" || item.category === "TMN" || item.category === "POP")
+              (item.category === "TMX" || item.category === "TMN" || item.category === "POP" || item.category === 'SKY' || (item.category === 'PTY' && item.fcstValue != '0'))
           );
 
           // 날짜별 최저/최고 기온 및 강수확률 저장
-          const reducedData = filteredData.reduce((acc, item) => {
+          const weatherByTime = filteredData.reduce((acc, item) => {
             const index = dayjs(item.fcstDate).diff(dayjs(NOW.format("YYYY-MM-DD")), "day");
+            const hour = Number(item.fcstTime.slice(0, 2));
+            const isAm = hour < 12;
+            const period = isAm ? "am" : "pm";
 
             if (!acc[index]) {
-              acc[index] = {min: "0", max: "0", amPop: "0", pmPop: "0"};
+              acc[index] = {
+                min: "0",
+                max: "0",
+                amPop: "0",
+                pmPop: "0",
+                amWf: "",
+                pmWf: "",
+                skyList: { am: [], pm: [] },
+                ptyList: { am: [], pm: [] },
+              };
             }
 
-            if (item.category === "TMX") {
-              acc[index].max = item.fcstValue;
-            } else if (item.category === "TMN") {
-              acc[index].min = item.fcstValue;
-            } else if (item.category === "POP") {
-              const hour = Number(item.fcstTime.slice(0, 2));
-              if (hour < 12) {
-                acc[index].amPop = Math.max(Number(acc[index].amPop), Number(item.fcstValue)).toString();
-              } else {
-                acc[index].pmPop = Math.max(Number(acc[index].pmPop), Number(item.fcstValue)).toString();
-              }
+            const target = acc[index];
+
+            switch (item.category) {
+              case "TMX":
+                target.max = item.fcstValue;
+                break;
+              case "TMN":
+                target.min = item.fcstValue;
+                break;
+              case "POP":
+                if (isAm) {
+                  target.amPop = Math.max(Number(target.amPop), Number(item.fcstValue)).toString();
+                } else {
+                  target.pmPop = Math.max(Number(target.pmPop), Number(item.fcstValue)).toString();
+                }
+                break;
+              case "SKY":
+                target.skyList![period].push(item.fcstValue);
+                break;
+              case "PTY":
+                target.ptyList![period].push(item.fcstValue);
+                break;
             }
 
             return acc;
-          }, {} as Record<number, { min: string; max: string; amPop: string; pmPop: string }>);
+          }, {} as Record<number, {
+            min: string;
+            max: string;
+            amPop: string;
+            pmPop: string;
+            amWf: string;
+            pmWf: string;
+            skyList?: { am: string[]; pm: string[] };
+            ptyList?: { am: string[]; pm: string[] };
+          }>);
 
-          resolve(reducedData);
+        // ✅ reduce 바깥에서 날씨 텍스트 계산
+          const getWorst = (list: string[]) => list.map(Number).sort((a, b) => b - a)[0]?.toString() ?? null;
+
+          const getWeatherText = (sky: string | null, pty: string | null) => {
+            if (pty && pty !== "0") {
+              switch (pty) {
+                case "1":
+                case "4":
+                  return "비";
+                case "2":
+                  return "비/눈";
+                case "3":
+                  return "눈";
+              }
+            }
+
+            if (sky) {
+              switch (sky) {
+                case "1":
+                  return "맑음";
+                case "3":
+                  return "구름많음";
+                case "4":
+                  return "흐림";
+              }
+            }
+
+            return "";
+          };
+
+// ✅ 이제 처리된 데이터에 날씨 텍스트 붙이기
+          for (const key in weatherByTime) {
+            const item = weatherByTime[key];
+            const amSky = getWorst(item.skyList!.am);
+            const pmSky = getWorst(item.skyList!.pm);
+            const amPty = getWorst(item.ptyList!.am);
+            const pmPty = getWorst(item.ptyList!.pm);
+
+            item.amWf = getWeatherText(amSky, amPty);
+            item.pmWf = getWeatherText(pmSky, pmPty);
+
+            delete item.skyList;
+            delete item.ptyList;
+          }
+
+          resolve(weatherByTime);
         } catch (e) {
           console.error("JSON 파싱 오류:", e);
           reject("Failed to process weather data");

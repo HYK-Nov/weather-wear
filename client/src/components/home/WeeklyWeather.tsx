@@ -1,4 +1,7 @@
-import { useLocationStore } from "@/stores/weatherStore.ts";
+import {
+  useLocationStore,
+  useWeeklyWeatherStore,
+} from "@/stores/weatherStore.ts";
 import { useEffect, useState } from "react";
 import { TWeekTemp } from "@/types/weather.ts";
 import WeeklyItem from "@/components/home/WeeklyItem.tsx";
@@ -6,8 +9,8 @@ import { getMidCode, getNxNy, getRainCode } from "@/features/apiCode.ts";
 import { Skeleton } from "@/components/ui/skeleton.tsx";
 
 export default function WeeklyWeather() {
-  const { region } = useLocationStore();
-  const { code } = useLocationStore();
+  const { region, code } = useLocationStore();
+  const { setWeeklyWeather } = useWeeklyWeatherStore();
   const [weekTemp, setWeekTemp] = useState<TWeekTemp>();
 
   useEffect(() => {
@@ -31,6 +34,7 @@ export default function WeeklyWeather() {
       if (midCode) {
         weekData().then((data) => {
           setWeekTemp(data);
+          setWeeklyWeather(data);
         });
       }
     })();
@@ -39,9 +43,9 @@ export default function WeeklyWeather() {
   return (
     <>
       {weekTemp ? (
-        <div className={"col-span-2 rounded-lg border p-5"}>
+        <div className={"col-span-2 rounded-lg border p-6"}>
           <p className={"mb-2 text-2xl font-bold"}>주간예보</p>
-          <div className={"flex h-full flex-col px-2"}>
+          <div className={"flex h-full flex-col"}>
             {Object.entries(weekTemp).map(([key, value]) => (
               <WeeklyItem key={key} later={key} data={value} />
             ))}

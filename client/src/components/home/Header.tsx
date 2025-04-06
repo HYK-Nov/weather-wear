@@ -1,7 +1,7 @@
 export default function Header() {
   return (
-    <header className={"mb-6 py-3"}>
-      <p>HEADER</p>
-    </header>
+    <div className={"rounded border p-5"}>
+      <p>NAV</p>
+    </div>
   );
 }

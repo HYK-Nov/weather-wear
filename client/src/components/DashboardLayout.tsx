@@ -3,9 +3,11 @@ import Header from "@/components/home/Header.tsx";
 
 export default function DashboardLayout() {
   return (
-    <div className="w-full px-10 pb-20">
-      <Header />
-      <Outlet />
-    </div>
+    <>
+      <div className="flex gap-5 px-5 py-10">
+        <Header />
+        <Outlet />
+      </div>
+    </>
   );
 }

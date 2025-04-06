@@ -30,7 +30,7 @@ export default function WeeklyItem({
   const pop = Math.max(Number(data.amPop), Number(data.pmPop));
 
   return (
-    <div className={"grid grid-cols-3 items-center gap-5 py-2"}>
+    <div className={"grid grid-cols-4 items-center gap-5 py-2"}>
       <div className={"flex flex-col"}>
         <p
           className={cn(
@@ -50,6 +50,10 @@ export default function WeeklyItem({
             `${DATE.month() >= 10 ? "MM" : "M"}.${DATE.day() >= 10 ? "DD" : "D"}`,
           )}
         </p>
+      </div>
+      <div className={"flex"}>
+        <p>{data.amWf}</p>
+        <p>{data.pmWf}</p>
       </div>
       <div
         className={cn(
