@@ -18,9 +18,9 @@ export const fetchNowWeather = (retryCount = 1, nx: string, ny: string): Promise
 
   return new Promise((resolve, reject) => {
     request(
-      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?numOfRows=60&base_time=${basetime}&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_API_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.format("YYYYMMDD")}`,
+      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?numOfRows=60&base_time=${basetime}&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.format("YYYYMMDD")}`,
       (error, response, body) => {
-        if (error || response.statusCode !== 200) {
+        if (error || response.statusCode !== 200 || !JSON.parse(body)) {
           console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
           if (retryCount < 2) return resolve(fetchNowWeather(retryCount + 1, nx, ny)); // 재시도
           return reject("Failed to fetch weather data");
@@ -57,9 +57,9 @@ export const fetchRecentlyTimeline = (retryCount = 1, nx: string, ny: string): P
 
   return new Promise((resolve, reject) => {
     request(
-      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=420&base_time=${baseTime}&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_API_KEY}&pageNo=1&dataType=JSON&base_date=${baseDate}`,
+      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=500&base_time=${baseTime}&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&dataType=JSON&base_date=${baseDate}`,
       (error, response, body) => {
-        if (error || response.statusCode !== 200) {
+        if (error || response.statusCode !== 200 || !JSON.parse(body)) {
           console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
           if (retryCount < 2) return resolve(fetchNowWeather(retryCount + 1, nx, ny)); // 재시도
           return reject("Failed to fetch weather data");
@@ -104,9 +104,9 @@ export const fetchNowTempMinMax = (retryCount = 1, nx: string, ny: string): Prom
 }> => {
   return new Promise((resolve, reject) => {
     request(
-      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=290&base_time=${NOW.hour() < 2 ? "23" : "02"}00&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_API_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.subtract(NOW.hour() < 2 ? 1 : 0, "days").format("YYYYMMDD")}`,
+      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=290&base_time=${NOW.hour() < 2 ? "23" : "02"}00&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.subtract(NOW.hour() < 2 ? 1 : 0, "days").format("YYYYMMDD")}`,
       (error, response, body) => {
-        if (error || response.statusCode !== 200) {
+        if (error || response.statusCode !== 200 || !JSON.parse(body)) {
           console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
           if (retryCount < 2) return resolve(fetchNowTempMinMax(retryCount + 1, nx, ny)); // 재시도
           return reject("Failed to fetch weather data");
@@ -134,9 +134,9 @@ export const fetchNowTempMinMax = (retryCount = 1, nx: string, ny: string): Prom
 export const fetchRecentlyTA = (retryCount = 1, nx: string, ny: string) => {
   return new Promise((resolve, reject) => {
     request(
-      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=944&base_time=${NOW.hour() < 2 ? "23" : "02"}00&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_API_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.subtract(NOW.hour() < 2 ? 1 : 0, "days").format("YYYYMMDD")}`,
+      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=944&base_time=${NOW.hour() < 2 ? "23" : "02"}00&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.subtract(NOW.hour() < 2 ? 1 : 0, "days").format("YYYYMMDD")}`,
       (error, response, body) => {
-        if (error || response.statusCode !== 200) {
+        if (error || response.statusCode !== 200 || !JSON.parse(body)) {
           console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
           if (retryCount < 2) return resolve(fetchNowTempMinMax(retryCount + 1, nx, ny)); // 재시도
           return reject("Failed to fetch weather data");
@@ -271,8 +271,8 @@ export const fetchWeekTA = (retryCount = 1, regId: string) => {
     .format(`YYYYMMDD0600`);
 
   return new Promise((resolve, reject) => {
-    request(`https://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=${process.env.WEATHER_API_KEY}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${tmFcTime}`, (error, response, body) => {
-      if (error || response.statusCode !== 200) {
+    request(`https://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${tmFcTime}`, (error, response, body) => {
+      if (error || response.statusCode !== 200 || !JSON.parse(body)) {
         console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
         if (retryCount < 2) return resolve(fetchWeekTA(retryCount + 1, regId)); // 재시도
         return reject("Failed to fetch weather data");
@@ -317,8 +317,8 @@ export const fetchWeekPOP = (retryCount = 1, regId: string) => {
     .format(`YYYYMMDD0600`);
 
   return new Promise((resolve, reject) => {
-    request(`http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=${process.env.WEATHER_API_KEY}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${tmFcTime}`, (error, response, body) => {
-      if (error || response.statusCode !== 200) {
+    request(`http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${tmFcTime}`, (error, response, body) => {
+      if (error || response.statusCode !== 200 || !JSON.parse(body)) {
         console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
         if (retryCount < 2) return resolve(fetchWeekTA(retryCount + 1, regId)); // 재시도
         return reject("Failed to fetch weather data");

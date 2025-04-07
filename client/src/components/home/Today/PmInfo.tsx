@@ -34,7 +34,7 @@ export default function PmInfo() {
     (async () => {
       try {
         const data = await fetch(
-          `${import.meta.env.VITE_SERVER_API}/api/air/now?sido=${sidoName}&station=${stationName}`,
+          `/air/now?sido=${sidoName}&station=${stationName}`,
         ).then((res) => res.json());
 
         if (data) {
@@ -56,7 +56,7 @@ export default function PmInfo() {
   return (
     <div
       className={
-        "bg-background flex w-full flex-col gap-1 rounded-lg border px-3 py-2 font-bold"
+        "bg-background flex w-full flex-col justify-center gap-1 rounded-lg border px-3 py-2 font-bold break-keep"
       }
     >
       {airInfo && (

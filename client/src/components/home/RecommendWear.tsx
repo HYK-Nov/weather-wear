@@ -41,12 +41,12 @@ export default function RecommendWear() {
 
   return (
     <div className="rounded-lg border p-5">
-      <p className="pb-5 text-2xl font-bold">오늘 뭐 입냐</p>
+      <p className="pb-5 text-2xl font-bold">지금 당장 나갈거라면</p>
 
-      <div className="grid grid-cols-5 gap-5">
+      <div className="flex gap-5 overflow-x-auto">
         {wearItems
           ? [...Array(5)].map((_, i) => (
-              <div key={i} className="relative">
+              <div key={i} className="relative min-w-[140px] shrink-0">
                 {!imageLoaded[i] && <Skeleton className="aspect-5/6 rounded" />}
                 {wearItems[i] && (
                   <Link
@@ -55,7 +55,7 @@ export default function RecommendWear() {
                   >
                     <img
                       src={wearItems[i].url}
-                      className="aspect-5/6 rounded object-cover object-center"
+                      className="aspect-5/6 w-48 rounded object-cover object-center"
                       onLoad={() =>
                         setImageLoaded((prev) => {
                           const updated = [...prev];
@@ -69,7 +69,10 @@ export default function RecommendWear() {
               </div>
             ))
           : [...Array(5)].map((_, i) => (
-              <Skeleton key={i} className="aspect-5/6 rounded" />
+              <Skeleton
+                key={i}
+                className="aspect-5/6 min-w-[140px] shrink-0 rounded"
+              />
             ))}
       </div>
     </div>

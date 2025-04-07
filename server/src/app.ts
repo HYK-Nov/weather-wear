@@ -13,7 +13,13 @@ import {
 const app = express();
 app.use(cors());
 
-app.get("/api/weather/now", (req, res) => {
+// Express에서 들어오는 요청 체크
+app.use((req, res, next) => {
+  console.log(`[${req.method}] ${req.path}`);
+  next();
+});
+
+app.get("/weather/now", (req, res) => {
   const nx = req.query.nx?.toString();
   const ny = req.query.ny?.toString();
 
@@ -27,7 +33,7 @@ app.get("/api/weather/now", (req, res) => {
     });
 });
 
-app.get("/api/weather/week", (req, res) => {
+app.get("/weather/week", (req, res) => {
   const regId1 = req.query.regId1?.toString();
   const regId2 = req.query.regId2?.toString();
   const nx = req.query.nx?.toString();
@@ -57,7 +63,7 @@ app.get("/api/weather/week", (req, res) => {
   });
 });
 
-app.get("/api/weather/timeline", (req, res) => {
+app.get("/weather/timeline", (req, res) => {
   const nx = req.query.nx?.toString();
   const ny = req.query.ny?.toString();
 
@@ -70,12 +76,12 @@ app.get("/api/weather/timeline", (req, res) => {
   }
 })
 
-app.get("/api/air/now", (req, res) => {
+app.get("/air/now", (req, res) => {
   const sidoName = encodeURIComponent(req.query.sido?.toString() || "");
   const stationName = req.query.station?.toString().split(" ") || [];
 
   const fetchAirInfo = (retryCount = 1) => {
-    request(`http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?serviceKey=${process.env.WEATHER_API_KEY}&returnType=json&numOfRows=200&pageNo=1&sidoName=${sidoName}&ver=1.3`, (error, response, body) => {
+    request(`http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty?serviceKey=${process.env.WEATHER_SERVICE_KEY}&returnType=json&numOfRows=200&pageNo=1&sidoName=${sidoName}&ver=1.3`, (error, response, body) => {
       if (error || response.statusCode !== 200) {
         console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
 
@@ -108,4 +114,6 @@ app.get("/api/air/now", (req, res) => {
   }
 });
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log("서버 실행 중");
+});

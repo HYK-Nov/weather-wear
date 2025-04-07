@@ -1,12 +1,5 @@
 import { useEffect, useState } from "react";
 import { useLocationStore, useWeatherStore } from "@/stores/weatherStore.ts";
-import {
-  TbSunFilled,
-  TbCloudFilled,
-  TbCloudRain,
-  TbCloudSnow,
-  TbQuestionMark,
-} from "react-icons/tb";
 import { PtyCode, SkyCode, TNowWeather } from "@/types/weather.ts";
 import dayjs from "dayjs";
 import "dayjs/locale/ko.js";
@@ -15,24 +8,12 @@ import { getNxNy } from "@/features/apiCode.ts";
 import { getAprTemp } from "@/features/weather.ts";
 import AnotherInfo from "@/components/home/Today/AnotherInfo.tsx";
 import { cn } from "@/lib/utils.ts";
+import WeatherIcon from "@/components/common/WeatherIcon.tsx";
 
 dayjs.locale("ko");
 dayjs.extend(LocalizedFormat);
 
-const WeatherIcon: Record<string, { icon: React.ElementType; style: string }> =
-  {
-    맑음: { icon: TbSunFilled, style: "text-amber-400" },
-    "구름 많음": { icon: TbCloudFilled, style: "text-slate-200" },
-    흐림: { icon: TbCloudFilled, style: "text-slate-400" },
-    비: { icon: TbCloudRain, style: "text-slate-200" },
-    "비/눈": { icon: TbCloudRain, style: "text-slate-200" },
-    눈: { icon: TbCloudSnow, style: "text-slate-200" },
-    빗방울: { icon: TbCloudRain, style: "text-slate-200" },
-    빗방울눈날림: { icon: TbCloudRain, style: "text-slate-200" },
-    눈날림: { icon: TbCloudSnow, style: "text-slate-200" },
-  };
-
-export default function TodayWeather() {
+export default function Today() {
   const { setAprTemp } = useWeatherStore();
   const { code } = useLocationStore();
   const [weatherInfo, setWeatherInfo] = useState({
@@ -54,8 +35,11 @@ export default function TodayWeather() {
         if (!res) return;
 
         const data = await fetch(
-          `${import.meta.env.VITE_SERVER_API}/api/weather/now?nx=${res["격자 X"]}&ny=${res["격자 Y"]}`,
-        ).then((res) => res.json());
+          `/weather/now?nx=${res["격자 X"]}&ny=${res["격자 Y"]}`,
+          { method: "GET" },
+        )
+          .then((res) => res.json())
+          .catch((err) => console.error(err));
 
         if (data) {
           setWeatherInfo((prev) => ({
@@ -135,27 +119,23 @@ export default function TodayWeather() {
     }
   }, [weatherInfo.ta, weatherInfo.ws, weatherInfo.hm]);
 
-  const weatherKey =
-    weatherInfo.pty && WeatherIcon[weatherInfo.pty]
-      ? weatherInfo.pty
-      : weatherInfo.sky;
-  const IconComponent =
-    WeatherIcon[weatherKey as keyof typeof WeatherIcon]?.icon || TbQuestionMark;
-  const iconStyle =
-    WeatherIcon[weatherKey as keyof typeof WeatherIcon]?.style || "";
-
   return (
     <div
       className={cn(
-        "grid grid-cols-1 justify-between gap-2 p-7 lg:grid-cols-2",
+        "grid grid-cols-1 justify-between gap-5 p-7 lg:grid-cols-3",
       )}
     >
       {weatherInfo.ta && (
         <>
-          <div className={"flex gap-3"}>
+          <div className={"flex gap-3 lg:col-span-1"}>
             {/* 현재 기온 */}
             <div className={"flex items-center gap-2"}>
-              <IconComponent className={`size-20 ${iconStyle}`} />
+              <WeatherIcon
+                state={
+                  weatherInfo.pty !== "없음" ? weatherInfo.pty : weatherInfo.sky
+                }
+                size={"lg"}
+              />
               <p className={"text-6xl font-bold"}>{weatherInfo.ta}°</p>
             </div>
             {/* 최저, 최고 기온 */}

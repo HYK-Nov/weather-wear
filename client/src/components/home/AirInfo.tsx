@@ -52,7 +52,7 @@ export default function AirInfo() {
       if (!reqApi.sido || !reqApi.station) return;
 
       const data: TNowAir = await fetch(
-        `${import.meta.env.VITE_SERVER_API}/api/air/now?sido=${reqApi.sido}&station=${reqApi.station}`,
+        `${import.meta.env.VITE_SERVER_API}/air/now?sido=${reqApi.sido}&station=${reqApi.station}`,
       ).then((res) => res.json());
 
       if (data) {

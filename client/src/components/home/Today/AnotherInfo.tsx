@@ -14,7 +14,11 @@ export default function AnotherInfo({
   ws: number;
 }) {
   return (
-    <div className={"mt-3 grid grid-cols-4 justify-items-center gap-2"}>
+    <div
+      className={
+        "mt-3 grid grid-cols-2 justify-items-center gap-2 lg:col-span-2 lg:grid-cols-4"
+      }
+    >
       {/* 미세먼지 */}
       <PmInfo />
       {/* 체감온도 */}
@@ -23,9 +27,9 @@ export default function AnotherInfo({
           "bg-background flex w-full items-center gap-2 rounded-lg border p-2 font-bold"
         }
       >
-        <FaTemperatureHalf className="size-6 text-neutral-700" />
+        <FaTemperatureHalf className="size-6 text-neutral-700 dark:text-white/70" />
         <div>
-          <p className={"text-sm text-neutral-700"}>체감</p>
+          <p className={"text-sm text-neutral-700 dark:text-white/70"}>체감</p>
           <p className={"text-xl"}>{aprTemp}°</p>
         </div>
       </div>
@@ -35,9 +39,9 @@ export default function AnotherInfo({
           "bg-background flex w-full items-center gap-2 rounded-lg border p-2 font-bold"
         }
       >
-        <MdOutlineWaterDrop className="size-7 text-neutral-700" />
+        <MdOutlineWaterDrop className="size-7 text-neutral-700 dark:text-white/70" />
         <div>
-          <p className={"text-sm text-neutral-700"}>습도</p>
+          <p className={"text-sm text-neutral-700 dark:text-white/70"}>습도</p>
           <p className={"text-xl"}>{hm}%</p>
         </div>
       </div>
@@ -47,9 +51,11 @@ export default function AnotherInfo({
           "bg-background flex w-full items-center gap-2 rounded-lg border p-2 font-bold"
         }
       >
-        <FaWind className="size-6 text-neutral-700" />
+        <FaWind className="size-6 text-neutral-700 dark:text-white/70" />
         <div>
-          <p className={"text-sm text-neutral-700"}>{wd}풍</p>
+          <p className={"text-sm text-neutral-700 dark:text-white/70"}>
+            {wd}풍
+          </p>
           <p className={"text-xl"}>{ws?.toFixed(1)}m/s</p>
         </div>
       </div>

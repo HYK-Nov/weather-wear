@@ -4,11 +4,11 @@ import {
 } from "@/stores/weatherStore.ts";
 import { useEffect, useState } from "react";
 import { TWeekTemp } from "@/types/weather.ts";
-import WeeklyItem from "@/components/home/WeeklyItem.tsx";
+import WeeklyItem from "@/components/home/weekly/WeeklyItem.tsx";
 import { getMidCode, getNxNy, getRainCode } from "@/features/apiCode.ts";
 import { Skeleton } from "@/components/ui/skeleton.tsx";
 
-export default function WeeklyWeather() {
+export default function Weekly() {
   const { region, code } = useLocationStore();
   const { setWeeklyWeather } = useWeeklyWeatherStore();
   const [weekTemp, setWeekTemp] = useState<TWeekTemp>();
@@ -24,7 +24,7 @@ export default function WeeklyWeather() {
       const weekData = async () => {
         try {
           return await fetch(
-            `${import.meta.env.VITE_SERVER_API}/api/weather/week?regId1=${midCode}&regId2=${rainCode}&nx=${nxny["격자 X"]}&ny=${nxny["격자 Y"]}`,
+            `${import.meta.env.VITE_SERVER_API}/weather/week?regId1=${midCode}&regId2=${rainCode}&nx=${nxny["격자 X"]}&ny=${nxny["격자 Y"]}`,
           ).then((res) => res.json());
         } catch (error) {
           console.error(error);

@@ -1,0 +1,22 @@
+@layer utilities {
+    .fc{
+        @apply select-none;
+    }
+
+    .fc-event {
+        @apply cursor-pointer;
+    }
+    .fc-day-today {
+        @apply !bg-transparent;
+    }
+
+    /* DayHeader 윗줄, 아래줄 제거 */
+    .fc .fc-col-header-cell {
+        @apply !border-t-0 !border-b-0;
+    }
+}
+
+.fc-highlight {
+    background-color: #e5e5e5 !important;
+    opacity: 0.3;
+}

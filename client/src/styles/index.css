@@ -3,7 +3,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/*@custom-variant dark (&:is(.dark *));*/
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
     --radius: 0.625rem;
@@ -190,4 +191,8 @@ button {
         padding-left: 2rem;
         padding-right: 2rem;
     }
+}
+
+.fc-highlight {
+    @apply bg-primary;
 }
