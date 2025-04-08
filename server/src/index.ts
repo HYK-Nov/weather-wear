@@ -1,4 +1,4 @@
-import {TNowAir} from "./api/types/air";
+import {TNowAir} from "./types/air";
 
 require("dotenv").config();
 import express = require("express");
@@ -9,7 +9,7 @@ import {
   fetchNowTempMinMax,
   fetchNowWeather, fetchRecentlyTA, fetchRecentlyTimeline, fetchWeekPOP,
   fetchWeekTA,
-} from "./api/features/weather";
+} from "./features/weather";
 
 const app = express();
 app.use(cors());

@@ -11,8 +11,8 @@
     "allowJs": true
   },
   "include": [
-    "api",
-    "index.ts"
+    "src",
+    "src/index.ts"
   ],
   "exclude": ["node_modules"]
 }

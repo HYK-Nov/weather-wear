@@ -1,9 +1,9 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "src/index.ts",
   "scripts": {
-    "dev": "nodemon --exec ts-node index.ts",
+    "dev": "nodemon --exec ts-node src/index.ts",
     "start": "node dist/index.js",
     "build": "tsc"
   },

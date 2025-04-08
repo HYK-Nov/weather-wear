@@ -10,7 +10,7 @@ export default defineConfig(({ mode }) => {
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./api"),
+        "@": path.resolve(__dirname, "./src"),
       },
     },
     assetsInclude: ["**/*.xlsx"], // .xlsx 파일을 Vite 에셋으로 포함
