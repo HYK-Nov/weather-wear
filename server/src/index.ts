@@ -3,7 +3,8 @@ import {TNowAir} from "./types/air";
 require("dotenv").config();
 import express = require("express");
 import request = require("request");
-import cors from "cors";
+import cors  = require("cors");
+
 import {
   fetchNowTempMinMax,
   fetchNowWeather, fetchRecentlyTA, fetchRecentlyTimeline, fetchWeekPOP,
@@ -133,4 +134,4 @@ app.listen(3000, () => {
   console.log("서버 실행 중");
 });
 
-export default app;
+module.exports = app;
