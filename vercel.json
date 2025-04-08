@@ -12,7 +12,7 @@
     }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/server/dist/index.js" },
+    { "src": "/api/(.*)", "dest": "/server/dist/index.js" }
   ],
   "rewrites":  [
     {"source": "/(.*)", "destination": "/"}
