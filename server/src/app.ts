@@ -27,6 +27,10 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get("/", (req, res) => {
+  res.json({ message: "pong" });
+});
+
 app.get("/api/weather/now", (req, res) => {
   const nx = req.query.nx?.toString();
   const ny = req.query.ny?.toString();
@@ -130,8 +134,8 @@ app.get("/api/air/now", (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+/*app.listen(3000, () => {
   console.log("서버 실행 중");
-});
+});*/
 
-module.exports = app;
+export default app;
