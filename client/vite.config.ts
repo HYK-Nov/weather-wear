@@ -8,6 +8,9 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
   return {
     plugins: [react(), tailwindcss()],
+    build: {
+      outDir: "dist",
+    },
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
