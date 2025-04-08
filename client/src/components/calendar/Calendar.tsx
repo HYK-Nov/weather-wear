@@ -23,7 +23,7 @@ export default function Calendar() {
   const { weeklyWeather, setWeeklyWeather } = useWeeklyWeatherStore();
   const calendarRef = useRef<FullCalendar>(null);
   const [curMonth, setCurMonth] = useState("");
-  const [events, setEvents] = useState<
+  const [events] = useState<
     {
       title: string;
       date?: string;

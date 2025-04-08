@@ -6,7 +6,7 @@ export type TCalendarEvent = {
   allDay?: boolean;
   extendedProps?: {
     color?: string;
-    id: string;
+    id?: string;
   };
 };
 
