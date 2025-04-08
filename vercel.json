@@ -2,8 +2,9 @@
   "version": 2,
   "builds": [
     {
-      "src": "server/src/app.js",
-      "use": "@vercel/node"
+      "src": "server/package.json",
+      "use": "@vercel/node",
+      "config": { "distDir": "server/dist" }
     },
     {
       "src": "client/package.json",
