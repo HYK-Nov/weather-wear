@@ -1,10 +1,10 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "src/app.ts",
+  "main": "api/index.ts",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/app.ts",
-    "start": "node src/app.ts",
+    "dev": "nodemon --exec ts-node api/index.ts",
+    "start": "node api/index.ts",
     "build": "tsc"
   },
   "author": "",
