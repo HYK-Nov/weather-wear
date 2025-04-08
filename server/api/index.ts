@@ -24,6 +24,7 @@ process.on("unhandledRejection", (reason) => {
 // Express에서 들어오는 요청 체크
 app.use((req, res, next) => {
   console.log(`[${req.method}] ${req.path}`);
+  console.log(`${req.query}`);
   next();
 });
 

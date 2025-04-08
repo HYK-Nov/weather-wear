@@ -8,6 +8,7 @@ export const fetchWithRetry = (url:string, retries = 3, delay = 1000) => {
         const isOk = res?.statusCode >= 200 && res?.statusCode < 300;
 
         console.log(JSON.parse(body));
+        console.log(url);
 
         if (!err && isOk && isJson) {
           try {
