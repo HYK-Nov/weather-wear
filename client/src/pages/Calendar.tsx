@@ -10,7 +10,7 @@ dayjs.locale("ko");
 dayjs.extend(LocalizedFormat);
 
 export default function CalendarPage() {
-  const { weeklyWeather, setWeeklyWeather } = useWeeklyWeatherStore();
+  const { weeklyWeather } = useWeeklyWeatherStore();
   useEffect(() => {
     if (!weeklyWeather) {
       /* empty */

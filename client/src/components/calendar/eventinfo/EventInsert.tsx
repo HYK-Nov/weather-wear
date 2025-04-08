@@ -28,10 +28,10 @@ export default function EventInsert({ date }: Props) {
   const [endOpen, setEndOpen] = useState(false);
   const [event, setEvent] = useState<TEventInfo>();
 
-  const onClickBtn = () => {
+  /*const onClickBtn = () => {
     // localStorage.setItem("events", {});
     setOpen(false);
-  };
+  };*/
 
   useEffect(() => {
     if (!open) {
