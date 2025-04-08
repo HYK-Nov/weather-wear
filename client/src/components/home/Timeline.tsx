@@ -32,7 +32,7 @@ export default function Timeline() {
         const ny = res["격자 Y"];
 
         const data = await fetch(
-          `/api/weather/timeline?nx=${nx}&ny=${ny}`,
+          `${import.meta.env.VITE_SERVER_API}/api/weather/timeline?nx=${nx}&ny=${ny}`,
         ).then((res) => res.json());
 
         if (data) {

@@ -142,7 +142,7 @@ export default function Calendar() {
           if (!midCode || !nxny || !rainCode) return;
 
           const res = await fetch(
-            `/api/weather/week?regId1=${midCode}&regId2=${rainCode}&nx=${nxny["격자 X"]}&ny=${nxny["격자 Y"]}`,
+            `${import.meta.env.VITE_SERVER_API}/api/weather/week?regId1=${midCode}&regId2=${rainCode}&nx=${nxny["격자 X"]}&ny=${nxny["격자 Y"]}`,
           );
           const data = await res.json();
           setWeeklyWeather(data);

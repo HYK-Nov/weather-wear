@@ -36,7 +36,7 @@ export default function Today() {
         if (!res) return;
 
         const data = await fetch(
-          `/api/weather/now?nx=${res["격자 X"]}&ny=${res["격자 Y"]}`,
+          `${import.meta.env.VITE_SERVER_API}/api/weather/now?nx=${res["격자 X"]}&ny=${res["격자 Y"]}`,
           { method: "GET" },
         )
           .then((res) => res.json())

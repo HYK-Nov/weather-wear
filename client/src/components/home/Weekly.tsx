@@ -24,7 +24,7 @@ export default function Weekly() {
       const weekData = async () => {
         try {
           return await fetch(
-            `/api/weather/week?regId1=${midCode}&regId2=${rainCode}&nx=${nxny["격자 X"]}&ny=${nxny["격자 Y"]}`,
+            `${import.meta.env.VITE_SERVER_API}/api/weather/week?regId1=${midCode}&regId2=${rainCode}&nx=${nxny["격자 X"]}&ny=${nxny["격자 Y"]}`,
           ).then((res) => res.json());
         } catch (error) {
           console.error(error);

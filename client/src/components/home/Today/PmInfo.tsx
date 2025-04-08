@@ -34,7 +34,7 @@ export default function PmInfo() {
     (async () => {
       try {
         const data = await fetch(
-          `/api/air/now?sido=${sidoName}&station=${stationName}`,
+          `${import.meta.env.VITE_SERVER_API}/api/air/now?sido=${sidoName}&station=${stationName}`,
         ).then((res) => res.json());
 
         if (data) {
