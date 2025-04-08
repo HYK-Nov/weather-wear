@@ -4,8 +4,8 @@
   "main": "src/app.ts",
   "scripts": {
     "dev": "nodemon --exec ts-node src/app.ts",
-    "start": "node dist/app.js",
-    "build": "tsc -p"
+    "build": "cd client && npm install && npm run build",
+    "start": "node server/dist/app.js"
   },
   "author": "",
   "license": "ISC",
