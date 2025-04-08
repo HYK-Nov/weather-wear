@@ -13,7 +13,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <Route element={<DashboardLayout />}>
         <Route index element={<HomePage />} />
         <Route path="calendar" element={<CalendarPage />} />
-        <Route path="setting" element={<></>} />
       </Route>
     </Routes>
   </BrowserRouter>,

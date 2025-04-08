@@ -24,7 +24,7 @@ export default function TimelineCarousel({ data }: { data: TWeatherForecast }) {
                 <div
                   key={`${date}-${hour}`}
                   data-date={date}
-                  className="flex w-60 shrink-0 basis-1/14 flex-col items-center border-r p-2 text-center last:border-0"
+                  className="flex w-60 shrink-0 basis-1/14 flex-col items-center border-r p-2 text-center last:border-0 dark:border-neutral-700"
                 >
                   <p
                     className={cn(
@@ -45,7 +45,7 @@ export default function TimelineCarousel({ data }: { data: TWeatherForecast }) {
                   <WeatherIcon
                     PTY={weather.PTY}
                     SKY={weather.SKY}
-                    size={"sm"}
+                    className={"size-[25px]"}
                   />
 
                   {/* 기온 */}

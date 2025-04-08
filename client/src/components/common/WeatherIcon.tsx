@@ -15,18 +15,19 @@ dayjs.locale("ko");
 dayjs.extend(LocalizedFormat);
 
 type WeatherIconProps =
-  | { state: string; size?: "sm" | "md" | "lg"; isNightTime?: boolean } // 단일 상태 문자열
+  | { state: string; size?: "xs" | "sm" | "md" | "lg"; isNightTime?: boolean } // 단일 상태 문자열
   | {
       SKY: string;
       PTY: string;
-      size?: "sm" | "md" | "lg";
+      size?: "xs" | "sm" | "md" | "lg";
       isNightTime?: boolean;
     }; // SKY + PTY 분리형
 
 export default function WeatherIcon({
   size = "md",
+  className,
   ...props
-}: WeatherIconProps) {
+}: WeatherIconProps & React.ComponentPropsWithoutRef<"div">) {
   const iconRecord: Record<string, { icon: React.ElementType; style: string }> =
     {
       맑음: { icon: TbSunFilled, style: "text-amber-400" },
@@ -111,15 +112,5 @@ export default function WeatherIcon({
 
   const { icon: IconComponent, style } =
     iconRecord[displayState] || iconRecord["알수없음"];
-  return (
-    <IconComponent
-      className={cn(
-        "size-20",
-        style,
-        { "size-20": size == "lg" },
-        { "size-14": size == "md" },
-        { "size-8": size == "sm" },
-      )}
-    />
-  );
+  return <IconComponent className={cn(style, className)} />;
 }

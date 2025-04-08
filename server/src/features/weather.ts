@@ -3,12 +3,13 @@ import dayjs from "dayjs";
 import "dayjs/locale/ko.js";
 import LocalizedFormat from "dayjs/plugin/localizedFormat";
 import {TNowWeather, TWeekTemp} from "../types/weather";
+import {fetchWithRetry} from "./fetch";
 
 dayjs.locale("ko");
 dayjs.extend(LocalizedFormat);
 
 const NOW = dayjs();
-const RECENTLY_BASETIME  = ["2300", "2000", "1700", "1400", "1100", "0800", "0500", "0200"];
+const RECENTLY_BASETIME = ["2300", "2000", "1700", "1400", "1100", "0800", "0500", "0200"];
 
 // 초단기 예보 조회
 export const fetchNowWeather = (retryCount = 1, nx: string, ny: string): Promise<any[]> => {
@@ -17,30 +18,20 @@ export const fetchNowWeather = (retryCount = 1, nx: string, ny: string): Promise
     .format("HH30");
 
   return new Promise((resolve, reject) => {
-    request(
-      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?numOfRows=60&base_time=${basetime}&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.format("YYYYMMDD")}`,
-      (error, response, body) => {
-        if (error || response.statusCode !== 200 || !JSON.parse(body)) {
-          console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
-          if (retryCount < 2) return resolve(fetchNowWeather(retryCount + 1, nx, ny)); // 재시도
-          return reject("Failed to fetch weather data");
-        }
-
-        try {
-          const data = JSON.parse(body).response.body.items.item;
-          const filteredData = data.reduce((acc: any[], item: { category: any }) => {
-            if (!acc.some(el => el.category === item.category)) {
-              acc.push(item);
-            }
-            return acc;
-          }, []);
-          resolve(filteredData);
-        } catch (e) {
-          console.error("JSON 파싱 오류:", e);
-          reject("Failed to process weather data");
-        }
-      }
-    );
+    fetchWithRetry(`http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?numOfRows=60&base_time=${basetime}&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.format("YYYYMMDD")}`)
+      .then((res:any) => {
+        const filteredData = res.reduce((acc: any[], item: { category: any }) => {
+          if (!acc.some(el => el.category === item.category)) {
+            acc.push(item);
+          }
+          return acc;
+        }, []);
+        resolve(filteredData);
+    })
+      .catch((err) => {
+        console.error(err);
+        reject("Failed to process weather data");
+      });
   });
 };
 
@@ -56,44 +47,35 @@ export const fetchRecentlyTimeline = (retryCount = 1, nx: string, ny: string): P
   }
 
   return new Promise((resolve, reject) => {
-    request(
-      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=500&base_time=${baseTime}&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&dataType=JSON&base_date=${baseDate}`,
-      (error, response, body) => {
-        if (error || response.statusCode !== 200 || !JSON.parse(body)) {
-          console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
-          if (retryCount < 2) return resolve(fetchNowWeather(retryCount + 1, nx, ny)); // 재시도
-          return reject("Failed to fetch weather data");
-        }
+    fetchWithRetry(`http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=490&base_time=${baseTime}&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&dataType=JSON&base_date=${baseDate}`)
+      .then((res:any) => {
+        const data = res;
+        const nowTime = NOW.format("HHmm");
+        const todayDate = NOW.format("YYYYMMDD");
 
-        try {
-          const data = JSON.parse(body).response.body.items.item;
-          const nowTime = NOW.format("HHmm");
-          const todayDate = NOW.format("YYYYMMDD");
+        // 날짜별 + 시간별 그룹화
+        const groupedData = data.reduce((acc: any, item: any) => {
+          const {fcstDate, fcstTime, category, fcstValue} = item;
 
-          // 날짜별 + 시간별 그룹화
-          const groupedData = data.reduce((acc: any, item: any) => {
-            const { fcstDate, fcstTime, category, fcstValue } = item;
+          // 현재 날짜의 경우, 현재 시간보다 이전 데이터 제외
+          if (fcstDate === todayDate && fcstTime < nowTime) return acc;
 
-            // 현재 날짜의 경우, 현재 시간보다 이전 데이터 제외
-            if (fcstDate === todayDate && fcstTime < nowTime) return acc;
+          // 시간에서 "00" 제거 (ex: "2000" → "20", "0300" → "3")
+          const timeKey = String(Number(fcstTime.slice(0, 2)));
 
-            // 시간에서 "00" 제거 (ex: "2000" → "20", "0300" → "3")
-            const timeKey = String(Number(fcstTime.slice(0, 2)));
+          if (!acc[fcstDate]) acc[fcstDate] = {};
+          if (!acc[fcstDate][timeKey]) acc[fcstDate][timeKey] = {};
 
-            if (!acc[fcstDate]) acc[fcstDate] = {};
-            if (!acc[fcstDate][timeKey]) acc[fcstDate][timeKey] = {};
+          acc[fcstDate][timeKey][category] = fcstValue;
+          return acc;
+        }, {});
 
-            acc[fcstDate][timeKey][category] = fcstValue;
-            return acc;
-          }, {});
-
-          resolve(groupedData);
-        } catch (e) {
-          console.error("JSON 파싱 오류:", e);
-          reject("Failed to process weather data");
-        }
-      }
-    )
+        resolve(groupedData);
+      })
+      .catch((err) => {
+        console.error(err);
+        reject("Failed to process weather data");
+      });
   });
 };
 
@@ -103,164 +85,146 @@ export const fetchNowTempMinMax = (retryCount = 1, nx: string, ny: string): Prom
   TMN: string | null
 }> => {
   return new Promise((resolve, reject) => {
-    request(
-      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=290&base_time=${NOW.hour() < 2 ? "23" : "02"}00&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.subtract(NOW.hour() < 2 ? 1 : 0, "days").format("YYYYMMDD")}`,
-      (error, response, body) => {
-        if (error || response.statusCode !== 200 || !JSON.parse(body)) {
-          console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
-          if (retryCount < 2) return resolve(fetchNowTempMinMax(retryCount + 1, nx, ny)); // 재시도
-          return reject("Failed to fetch weather data");
-        }
+    fetchWithRetry(`http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=290&base_time=${NOW.hour() < 2 ? "23" : "02"}00&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.subtract(NOW.hour() < 2 ? 1 : 0, "days").format("YYYYMMDD")}`)
+      .then((res: any) => {
+        const data: TNowWeather[] = res;
+        const firstTMX = data.find(item => item.fcstDate === NOW.format("YYYYMMDD") && item.category === "TMX");
+        const firstTMN = data.find(item => item.fcstDate === NOW.format("YYYYMMDD") && item.category === "TMN");
 
-        try {
-          const data: TNowWeather[] = JSON.parse(body).response.body.items.item;
-          const firstTMX = data.find(item => item.fcstDate === NOW.format("YYYYMMDD") && item.category === "TMX");
-          const firstTMN = data.find(item => item.fcstDate === NOW.format("YYYYMMDD") && item.category === "TMN");
-
-          resolve({
-            TMX: firstTMX ? firstTMX.fcstValue : null,
-            TMN: firstTMN ? firstTMN.fcstValue : null
-          });
-        } catch (e) {
-          console.error("JSON 파싱 오류:", e);
-          reject("Failed to process weather data");
-        }
-      }
-    );
+        resolve({
+          TMX: firstTMX ? firstTMX.fcstValue : null,
+          TMN: firstTMN ? firstTMN.fcstValue : null
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+        reject("Failed to process weather data");
+      });
   });
 };
 
 // 중기 예보 기온 조회 (1~3일)
 export const fetchRecentlyTA = (retryCount = 1, nx: string, ny: string) => {
   return new Promise((resolve, reject) => {
-    request(
-      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=944&base_time=${NOW.hour() < 2 ? "23" : "02"}00&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.subtract(NOW.hour() < 2 ? 1 : 0, "days").format("YYYYMMDD")}`,
-      (error, response, body) => {
-        if (error || response.statusCode !== 200 || !JSON.parse(body)) {
-          console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
-          if (retryCount < 2) return resolve(fetchNowTempMinMax(retryCount + 1, nx, ny)); // 재시도
-          return reject("Failed to fetch weather data");
-        }
+    fetchWithRetry(`http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=944&base_time=${NOW.hour() < 2 ? "23" : "02"}00&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&dataType=JSON&base_date=${NOW.subtract(NOW.hour() < 2 ? 1 : 0, "days").format("YYYYMMDD")}`)
+      .then((res: any) => {
+        const data: TNowWeather[] = res;
 
-        try {
-          const data: TNowWeather[] = JSON.parse(body).response.body.items.item;
+        // TMX, TMN, POP 데이터 필터링
+        const filteredData = data.filter(
+          (item) =>
+            dayjs(item.fcstDate).diff(NOW, "day") >= 0 &&
+            dayjs(item.fcstDate).diff(NOW, "day") < 4 &&
+            (item.category === "TMX" || item.category === "TMN" || item.category === "POP" || item.category === "SKY" || (item.category === "PTY" && item.fcstValue != "0"))
+        );
 
-          // TMX, TMN, POP 데이터 필터링
-          const filteredData = data.filter(
-            (item) =>
-              dayjs(item.fcstDate).diff(NOW, "day") >= 0 &&
-              dayjs(item.fcstDate).diff(NOW, "day") < 4 &&
-              (item.category === "TMX" || item.category === "TMN" || item.category === "POP" || item.category === 'SKY' || (item.category === 'PTY' && item.fcstValue != '0'))
-          );
+        // 날짜별 최저/최고 기온 및 강수확률 저장
+        const weatherByTime = filteredData.reduce((acc, item) => {
+          const index = dayjs(item.fcstDate).diff(dayjs(NOW.format("YYYY-MM-DD")), "day");
+          const hour = Number(item.fcstTime.slice(0, 2));
+          const isAm = hour < 12;
+          const period = isAm ? "am" : "pm";
 
-          // 날짜별 최저/최고 기온 및 강수확률 저장
-          const weatherByTime = filteredData.reduce((acc, item) => {
-            const index = dayjs(item.fcstDate).diff(dayjs(NOW.format("YYYY-MM-DD")), "day");
-            const hour = Number(item.fcstTime.slice(0, 2));
-            const isAm = hour < 12;
-            const period = isAm ? "am" : "pm";
-
-            if (!acc[index]) {
-              acc[index] = {
-                min: "0",
-                max: "0",
-                amPop: "0",
-                pmPop: "0",
-                amWf: "",
-                pmWf: "",
-                skyList: { am: [], pm: [] },
-                ptyList: { am: [], pm: [] },
-              };
-            }
-
-            const target = acc[index];
-
-            switch (item.category) {
-              case "TMX":
-                target.max = item.fcstValue;
-                break;
-              case "TMN":
-                target.min = item.fcstValue;
-                break;
-              case "POP":
-                if (isAm) {
-                  target.amPop = Math.max(Number(target.amPop), Number(item.fcstValue)).toString();
-                } else {
-                  target.pmPop = Math.max(Number(target.pmPop), Number(item.fcstValue)).toString();
-                }
-                break;
-              case "SKY":
-                target.skyList![period].push(item.fcstValue);
-                break;
-              case "PTY":
-                target.ptyList![period].push(item.fcstValue);
-                break;
-            }
-
-            return acc;
-          }, {} as Record<number, {
-            min: string;
-            max: string;
-            amPop: string;
-            pmPop: string;
-            amWf: string;
-            pmWf: string;
-            skyList?: { am: string[]; pm: string[] };
-            ptyList?: { am: string[]; pm: string[] };
-          }>);
-
-        // ✅ reduce 바깥에서 날씨 텍스트 계산
-          const getWorst = (list: string[]) => list.map(Number).sort((a, b) => b - a)[0]?.toString() ?? null;
-
-          const getWeatherText = (sky: string | null, pty: string | null) => {
-            if (pty && pty !== "0") {
-              switch (pty) {
-                case "1":
-                case "4":
-                  return "비";
-                case "2":
-                  return "비/눈";
-                case "3":
-                  return "눈";
-              }
-            }
-
-            if (sky) {
-              switch (sky) {
-                case "1":
-                  return "맑음";
-                case "3":
-                  return "구름많음";
-                case "4":
-                  return "흐림";
-              }
-            }
-
-            return "";
-          };
-
-// ✅ 이제 처리된 데이터에 날씨 텍스트 붙이기
-          for (const key in weatherByTime) {
-            const item = weatherByTime[key];
-            const amSky = getWorst(item.skyList!.am);
-            const pmSky = getWorst(item.skyList!.pm);
-            const amPty = getWorst(item.ptyList!.am);
-            const pmPty = getWorst(item.ptyList!.pm);
-
-            item.amWf = getWeatherText(amSky, amPty);
-            item.pmWf = getWeatherText(pmSky, pmPty);
-
-            delete item.skyList;
-            delete item.ptyList;
+          if (!acc[index]) {
+            acc[index] = {
+              min: "0",
+              max: "0",
+              amPop: "0",
+              pmPop: "0",
+              amWf: "",
+              pmWf: "",
+              skyList: {am: [], pm: []},
+              ptyList: {am: [], pm: []},
+            };
           }
 
-          resolve(weatherByTime);
-        } catch (e) {
-          console.error("JSON 파싱 오류:", e);
-          reject("Failed to process weather data");
+          const target = acc[index];
+
+          switch (item.category) {
+            case "TMX":
+              target.max = item.fcstValue;
+              break;
+            case "TMN":
+              target.min = item.fcstValue;
+              break;
+            case "POP":
+              if (isAm) {
+                target.amPop = Math.max(Number(target.amPop), Number(item.fcstValue)).toString();
+              } else {
+                target.pmPop = Math.max(Number(target.pmPop), Number(item.fcstValue)).toString();
+              }
+              break;
+            case "SKY":
+              target.skyList![period].push(item.fcstValue);
+              break;
+            case "PTY":
+              target.ptyList![period].push(item.fcstValue);
+              break;
+          }
+
+          return acc;
+        }, {} as Record<number, {
+          min: string;
+          max: string;
+          amPop: string;
+          pmPop: string;
+          amWf: string;
+          pmWf: string;
+          skyList?: { am: string[]; pm: string[] };
+          ptyList?: { am: string[]; pm: string[] };
+        }>);
+
+        // ✅ reduce 바깥에서 날씨 텍스트 계산
+        const getWorst = (list: string[]) => list.map(Number).sort((a, b) => b - a)[0]?.toString() ?? null;
+
+        const getWeatherText = (sky: string | null, pty: string | null) => {
+          if (pty && pty !== "0") {
+            switch (pty) {
+              case "1":
+              case "4":
+                return "비";
+              case "2":
+                return "비/눈";
+              case "3":
+                return "눈";
+            }
+          }
+
+          if (sky) {
+            switch (sky) {
+              case "1":
+                return "맑음";
+              case "3":
+                return "구름많음";
+              case "4":
+                return "흐림";
+            }
+          }
+
+          return "";
+        };
+
+// ✅ 이제 처리된 데이터에 날씨 텍스트 붙이기
+        for (const key in weatherByTime) {
+          const item = weatherByTime[key];
+          const amSky = getWorst(item.skyList!.am);
+          const pmSky = getWorst(item.skyList!.pm);
+          const amPty = getWorst(item.ptyList!.am);
+          const pmPty = getWorst(item.ptyList!.pm);
+
+          item.amWf = getWeatherText(amSky, amPty);
+          item.pmWf = getWeatherText(pmSky, pmPty);
+
+          delete item.skyList;
+          delete item.ptyList;
         }
-      }
-    );
+
+        resolve(weatherByTime);
+      })
+      .catch((err) => {
+        console.error(err);
+        reject("Failed to process weather data");
+      });
   });
 };
 
@@ -271,15 +235,9 @@ export const fetchWeekTA = (retryCount = 1, regId: string) => {
     .format(`YYYYMMDD0600`);
 
   return new Promise((resolve, reject) => {
-    request(`https://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${tmFcTime}`, (error, response, body) => {
-      if (error || response.statusCode !== 200 || !JSON.parse(body)) {
-        console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
-        if (retryCount < 2) return resolve(fetchWeekTA(retryCount + 1, regId)); // 재시도
-        return reject("Failed to fetch weather data");
-      }
-
-      try {
-        const data = JSON.parse(body).response.body.items.item[0];
+    fetchWithRetry(`https://apis.data.go.kr/1360000/MidFcstInfoService/getMidTa?serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${tmFcTime}`)
+      .then((res:any) =>{
+        const data = res[0];
         const filteredData = Object.keys(data)
           .filter(key => (key.startsWith("taMax") || key.startsWith("taMin")) && !key.includes("Low") && !key.includes("High"))
           .reduce((obj, key) => {
@@ -302,11 +260,11 @@ export const fetchWeekTA = (retryCount = 1, regId: string) => {
           }>);
 
         resolve(filteredData);
-      } catch (e) {
-        console.error("JSON 파싱 오류:", e);
+      })
+      .catch((err:any) => {
+        console.error(err);
         reject("Failed to process weather data");
-      }
-    });
+      })
   });
 };
 
@@ -317,15 +275,9 @@ export const fetchWeekPOP = (retryCount = 1, regId: string) => {
     .format(`YYYYMMDD0600`);
 
   return new Promise((resolve, reject) => {
-    request(`http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${tmFcTime}`, (error, response, body) => {
-      if (error || response.statusCode !== 200 || !JSON.parse(body)) {
-        console.error(`API 요청 실패 (${retryCount}/2)`, error || response.statusCode);
-        if (retryCount < 2) return resolve(fetchWeekTA(retryCount + 1, regId)); // 재시도
-        return reject("Failed to fetch weather data");
-      }
-
-      try {
-        const data = JSON.parse(body).response.body.items.item[0];
+    fetchWithRetry(`http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${tmFcTime}`)
+      .then((res:any) =>{
+        const data = res[0];
 
         // rnSt(강수 확률)과 wf(날씨 상태) 키 필터링
         const filteredKeys = Object.keys(data).filter(
@@ -337,7 +289,7 @@ export const fetchWeekPOP = (retryCount = 1, regId: string) => {
 
           if (dayIndex) {
             if (!obj[dayIndex]) {
-              obj[dayIndex] = { amPop: "0", pmPop: "0", amWf: "", pmWf: "" }; // 기본값 설정
+              obj[dayIndex] = {amPop: "0", pmPop: "0", amWf: "", pmWf: ""}; // 기본값 설정
             }
 
             const value = data[key]?.toString() ?? "0"; // null이면 "0" 처리
@@ -361,10 +313,10 @@ export const fetchWeekPOP = (retryCount = 1, regId: string) => {
         }, {} as Record<string, { amPop: string; pmPop: string; amWf: string; pmWf: string }>);
 
         resolve(reducedData);
-      } catch (e) {
-        console.error("JSON 파싱 오류:", e);
+      })
+      .catch((err:any) => {
+        console.error(err);
         reject("Failed to process weather data");
-      }
-    });
+      });
   });
 };

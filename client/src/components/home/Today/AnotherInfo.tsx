@@ -16,7 +16,7 @@ export default function AnotherInfo({
   return (
     <div
       className={
-        "mt-3 grid grid-cols-2 justify-items-center gap-2 lg:col-span-2 lg:grid-cols-4"
+        "mt-3 grid grid-cols-2 items-center justify-items-center gap-2 lg:col-span-2 xl:grid-cols-4"
       }
     >
       {/* 미세먼지 */}
@@ -24,7 +24,7 @@ export default function AnotherInfo({
       {/* 체감온도 */}
       <div
         className={
-          "bg-background flex w-full items-center gap-2 rounded-lg border p-2 font-bold"
+          "bg-background flex w-full items-center gap-2 rounded-lg border p-2 font-bold dark:border-neutral-700"
         }
       >
         <FaTemperatureHalf className="size-6 text-neutral-700 dark:text-white/70" />

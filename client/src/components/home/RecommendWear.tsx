@@ -40,12 +40,13 @@ export default function RecommendWear() {
   }, [aprTemp]);
 
   return (
-    <div className="rounded-lg border p-5">
-      <p className="pb-5 text-2xl font-bold">지금 당장 나갈거라면</p>
+    <>
+      {wearItems && (
+        <div className="rounded-lg border p-7 dark:border-neutral-700">
+          <p className="mb-3 text-2xl font-bold">오늘 뭐 입지?</p>
 
-      <div className="flex gap-5 overflow-x-auto">
-        {wearItems
-          ? [...Array(5)].map((_, i) => (
+          <div className="flex gap-5 overflow-x-auto py-3">
+            {[...Array(5)].map((_, i) => (
               <div key={i} className="relative min-w-[140px] shrink-0">
                 {!imageLoaded[i] && <Skeleton className="aspect-5/6 rounded" />}
                 {wearItems[i] && (
@@ -67,14 +68,10 @@ export default function RecommendWear() {
                   </Link>
                 )}
               </div>
-            ))
-          : [...Array(5)].map((_, i) => (
-              <Skeleton
-                key={i}
-                className="aspect-5/6 min-w-[140px] shrink-0 rounded"
-              />
             ))}
-      </div>
-    </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

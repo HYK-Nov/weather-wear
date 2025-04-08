@@ -67,7 +67,7 @@ export default function CarouselWrapper({
       {currentIndex > 0 && (
         <button
           onClick={scrollPrev}
-          className="bg-background/70 absolute top-1/2 left-0 -translate-y-1/2 rounded-full border p-1 text-neutral-500"
+          className="bg-background/70 absolute top-1/2 left-0 -translate-y-1/2 rounded-full border p-1 text-neutral-500 dark:border-neutral-700"
         >
           <ChevronLeft />
         </button>
@@ -77,7 +77,7 @@ export default function CarouselWrapper({
       {currentIndex < scrollSnapCount - 1 && (
         <button
           onClick={scrollNext}
-          className="bg-background/70 absolute top-1/2 right-0 -translate-y-1/2 rounded-full border p-1 text-neutral-500"
+          className="bg-background/70 absolute top-1/2 right-0 -translate-y-1/2 rounded-full border p-1 text-neutral-500 dark:border-neutral-700"
         >
           <ChevronRight />
         </button>

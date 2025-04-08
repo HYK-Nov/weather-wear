@@ -41,7 +41,7 @@ export default function CurLocation() {
       </button>
       <p
         className={
-          "inline rounded-full border px-2 py-1 text-sm font-bold text-neutral-500"
+          "inline rounded-full border bg-white/5 px-2 py-1 text-sm font-bold text-neutral-500 dark:border-neutral-700"
         }
       >{`${dayjs().format("MM.DD")} 기준`}</p>
     </div>

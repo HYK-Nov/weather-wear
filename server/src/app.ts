@@ -13,15 +13,26 @@ import {
 const app = express();
 app.use(cors());
 
+process.on("uncaughtException", (err) => {
+  console.error("Uncaught Exception:", err);
+});
+process.on("unhandledRejection", (reason) => {
+  console.error("Unhandled Rejection:", reason);
+});
+
 // Express에서 들어오는 요청 체크
 app.use((req, res, next) => {
   console.log(`[${req.method}] ${req.path}`);
   next();
 });
 
-app.get("/weather/now", (req, res) => {
+app.get("/api/weather/now", (req, res) => {
   const nx = req.query.nx?.toString();
   const ny = req.query.ny?.toString();
+
+  /*if (!nx || !ny) {
+    return res.status(400).send("nx, ny는 필수입니다.");
+  }*/
 
   Promise.all([fetchNowWeather(1, nx!, ny!), fetchNowTempMinMax(1, nx!, ny!)])
     .then(([nowData, tempData]) => {
@@ -33,12 +44,16 @@ app.get("/weather/now", (req, res) => {
     });
 });
 
-app.get("/weather/week", (req, res) => {
+app.get("/api/weather/week", (req, res) => {
   const regId1 = req.query.regId1?.toString();
   const regId2 = req.query.regId2?.toString();
   const nx = req.query.nx?.toString();
   const ny = req.query.ny?.toString();
 
+  /*if (!nx || !ny) {
+    return res.status(400).send("nx, ny는 필수입니다.");
+  }
+*/
   Promise.all([fetchRecentlyTA(1, nx!, ny!), fetchWeekTA(1, regId1!), fetchWeekPOP(1, regId2!)]).then(([weather1, weather2, weather3]) => {
     const weather2Obj = weather2 as Record<string, any>;
     const weather3Obj = weather3 as Record<string, any>;
@@ -63,7 +78,7 @@ app.get("/weather/week", (req, res) => {
   });
 });
 
-app.get("/weather/timeline", (req, res) => {
+app.get("/api/weather/timeline", (req, res) => {
   const nx = req.query.nx?.toString();
   const ny = req.query.ny?.toString();
 
@@ -76,7 +91,7 @@ app.get("/weather/timeline", (req, res) => {
   }
 })
 
-app.get("/air/now", (req, res) => {
+app.get("/api/air/now", (req, res) => {
   const sidoName = encodeURIComponent(req.query.sido?.toString() || "");
   const stationName = req.query.station?.toString().split(" ") || [];
 
@@ -114,6 +129,8 @@ app.get("/air/now", (req, res) => {
   }
 });
 
-app.listen(3000, () => {
+/*app.listen(3000, () => {
   console.log("서버 실행 중");
-});
+});*/
+
+export default app;

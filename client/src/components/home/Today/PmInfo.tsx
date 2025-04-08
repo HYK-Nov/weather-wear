@@ -34,7 +34,7 @@ export default function PmInfo() {
     (async () => {
       try {
         const data = await fetch(
-          `/air/now?sido=${sidoName}&station=${stationName}`,
+          `/api/air/now?sido=${sidoName}&station=${stationName}`,
         ).then((res) => res.json());
 
         if (data) {
@@ -56,14 +56,16 @@ export default function PmInfo() {
   return (
     <div
       className={
-        "bg-background flex w-full flex-col justify-center gap-1 rounded-lg border px-3 py-2 font-bold break-keep"
+        "bg-background flex h-fit w-full flex-col justify-center gap-1 rounded-lg border px-3 py-2 font-bold break-keep dark:border-neutral-700"
       }
     >
       {airInfo && (
         <>
           {/* 미세 */}
           <div className={"flex items-center justify-between gap-3"}>
-            <p className={"text-sm text-neutral-700"}>미세</p>
+            <p className={"text-sm text-neutral-700 dark:text-white/70"}>
+              미세
+            </p>
             <div
               className={cn(
                 PM_GRADE_STYLE[airInfo.pm10Grade1h].style,
@@ -76,7 +78,9 @@ export default function PmInfo() {
           </div>
           {/* 초미세 */}
           <div className={"flex items-center justify-between gap-3"}>
-            <p className={"text-sm text-neutral-700"}>초미세</p>
+            <p className={"text-sm text-neutral-700 dark:text-white/70"}>
+              초미세
+            </p>
             <div
               className={cn(
                 PM_GRADE_STYLE[airInfo.pm25Grade1h].style,

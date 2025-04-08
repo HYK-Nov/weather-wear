@@ -24,7 +24,7 @@ export default function Weekly() {
       const weekData = async () => {
         try {
           return await fetch(
-            `${import.meta.env.VITE_SERVER_API}/weather/week?regId1=${midCode}&regId2=${rainCode}&nx=${nxny["격자 X"]}&ny=${nxny["격자 Y"]}`,
+            `/api/weather/week?regId1=${midCode}&regId2=${rainCode}&nx=${nxny["격자 X"]}&ny=${nxny["격자 Y"]}`,
           ).then((res) => res.json());
         } catch (error) {
           console.error(error);
@@ -43,7 +43,7 @@ export default function Weekly() {
   return (
     <>
       {weekTemp ? (
-        <div className={"col-span-2 rounded-lg border p-6"}>
+        <div className={"rounded-lg border p-6 dark:border-neutral-700"}>
           <p className={"mb-2 text-2xl font-bold"}>주간예보</p>
           <div className={"flex h-full flex-col"}>
             {Object.entries(weekTemp).map(([key, value]) => (
@@ -52,7 +52,7 @@ export default function Weekly() {
           </div>
         </div>
       ) : (
-        <Skeleton className="col-span-2 rounded-lg p-5" />
+        <Skeleton className="h-[600px] rounded-lg p-5" />
       )}
     </>
   );

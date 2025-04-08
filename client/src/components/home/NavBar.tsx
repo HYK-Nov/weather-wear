@@ -15,7 +15,7 @@ export default function NavBar() {
   return (
     <div
       className={
-        "fixed hidden h-[calc(100vh-4rem)] flex-col justify-between rounded border px-2 py-5 md:flex"
+        "fixed hidden h-[calc(100vh-4rem)] flex-col justify-between rounded border px-2 py-5 md:flex dark:border-neutral-700"
       }
     >
       <div className={"flex flex-col gap-5"}>

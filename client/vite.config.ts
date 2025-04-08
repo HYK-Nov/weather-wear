@@ -16,22 +16,11 @@ export default defineConfig(({ mode }) => {
     assetsInclude: ["**/*.xlsx"], // .xlsx 파일을 Vite 에셋으로 포함
     server: {
       proxy: {
-        "/scraping": {
-          target: "https://www.musinsa.com/",
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/scraping/, ""),
-        },
-        "/weather": {
+        "/api": {
           target: env.VITE_SERVER_API,
           changeOrigin: true,
-          ws: false, // 웹소켓 사용 안 하면 false로
-          secure: false, // https 아니면 false
-        },
-        "/air": {
-          target: env.VITE_SERVER_API,
-          changeOrigin: true,
-          ws: false, // 웹소켓 사용 안 하면 false로
-          secure: false, // https 아니면 false
+          ws: false,
+          secure: false,
         },
       },
     },
