@@ -2,13 +2,17 @@ import request = require("request");
 import dayjs from "dayjs";
 import "dayjs/locale/ko.js";
 import LocalizedFormat from "dayjs/plugin/localizedFormat";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
 import {TNowWeather, TWeekTemp} from "../types/weather";
 import {fetchWithRetry} from "./fetch";
 
 dayjs.locale("ko");
 dayjs.extend(LocalizedFormat);
+dayjs.extend(utc);
+dayjs.extend(timezone);
 
-const NOW = dayjs();
+const NOW = dayjs().tz("Asia/Seoul");
 const RECENTLY_BASETIME = ["2300", "2000", "1700", "1400", "1100", "0800", "0500", "0200"];
 
 // 초단기 예보 조회
