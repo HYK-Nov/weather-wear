@@ -4,7 +4,6 @@ require("dotenv").config();
 import express = require("express");
 import request = require("request");
 import cors  = require("cors");
-
 import {
   fetchNowTempMinMax,
   fetchNowWeather, fetchRecentlyTA, fetchRecentlyTimeline, fetchWeekPOP,
@@ -12,7 +11,7 @@ import {
 } from "../src/features/weather";
 
 const app = express();
-app.use(cors());
+app.use(cors({origin: "https://weather-wear-alpha.vercel.app"}));
 
 process.on("uncaughtException", (err) => {
   console.error("Uncaught Exception:", err);
@@ -24,7 +23,6 @@ process.on("unhandledRejection", (reason) => {
 // Express에서 들어오는 요청 체크
 app.use((req, res, next) => {
   console.log(`[${req.method}] ${req.path}`);
-  console.log(`${req.query}`);
   next();
 });
 

@@ -14,7 +14,6 @@ export const getAprTemp = (
   humidity: number,
 ) => {
   let aprTemp = temp;
-  // const tw = getTw(temp, humidity);
 
   if (windSpeed >= 1.3) {
     //   풍속 체감온도
