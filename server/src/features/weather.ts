@@ -50,12 +50,16 @@ export const fetchRecentlyTimeline = (retryCount = 1, nx: string, ny: string): P
     baseDate = NOW.subtract(1, "day").format("YYYYMMDD");
   }
 
+  console.log(baseTime, baseDate);
+
   return new Promise((resolve, reject) => {
     fetchWithRetry(`http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?numOfRows=490&base_time=${baseTime}&nx=${nx}&ny=${ny}&serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&dataType=JSON&base_date=${baseDate}`)
       .then((res:any) => {
         const data = res;
         const nowTime = NOW.format("HHmm");
         const todayDate = NOW.format("YYYYMMDD");
+
+        console.log(data);
 
         // 날짜별 + 시간별 그룹화
         const groupedData = data.reduce((acc: any, item: any) => {
