@@ -59,8 +59,6 @@ export const fetchRecentlyTimeline = (retryCount = 1, nx: string, ny: string): P
         const nowTime = NOW.format("HHmm");
         const todayDate = NOW.format("YYYYMMDD");
 
-        console.log(data);
-
         // 날짜별 + 시간별 그룹화
         const groupedData = data.reduce((acc: any, item: any) => {
           const {fcstDate, fcstTime, category, fcstValue} = item;

@@ -7,6 +7,8 @@ export const fetchWithRetry = (url:string, retries = 3, delay = 1000) => {
         const isJson = res?.headers["content-type"]?.includes("application/json");
         const isOk = res?.statusCode >= 200 && res?.statusCode < 300;
 
+        console.log(body);
+
         if (!err && isOk && isJson) {
           try {
             const data = JSON.parse(body).response?.body?.items?.item;
