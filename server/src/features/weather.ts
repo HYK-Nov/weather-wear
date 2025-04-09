@@ -273,7 +273,7 @@ export const fetchWeekPOP = (retryCount = 1, regId: string) => {
   const tmFcTime = NOW
     .subtract(NOW.hour() > 6 ? 0 : 1, "days")
     .format(`YYYYMMDD0600`);
-  console.log(tmFcTime);
+  console.log(tmFcTime, NOW.hour());
 
   return new Promise((resolve, reject) => {
     fetchWithRetry(`http://apis.data.go.kr/1360000/MidFcstInfoService/getMidLandFcst?serviceKey=${process.env.WEATHER_SERVICE_KEY}&pageNo=1&numOfRows=10&dataType=JSON&regId=${regId}&tmFc=${tmFcTime}`)
