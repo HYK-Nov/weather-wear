@@ -11,7 +11,7 @@ import {
 } from "../src/features/weather";
 
 const app = express();
-app.use(cors({origin: "https://weather-wear-alpha.vercel.app"}));
+app.use(cors());
 
 process.on("uncaughtException", (err) => {
   console.error("Uncaught Exception:", err);

@@ -1,8 +1,8 @@
 export type TCalendarEvent = {
   title?: string;
   date?: string;
-  start?: Date | null;
-  end?: Date | null;
+  start?: Date | string;
+  end?: Date | string;
   allDay?: boolean;
   extendedProps?: {
     color?: string;

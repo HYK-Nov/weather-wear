@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils.ts";
 import { TCalendarEvent } from "@/types/calendar.ts";
 import { useEffect, useState } from "react";
 import { TbClock } from "react-icons/tb";
+import { useEventListStore } from "@/stores/calendarStore.ts";
 
 dayjs.locale("ko");
 dayjs.extend(LocalizedFormat);
@@ -25,13 +26,22 @@ type Props =
 
 export default function EventPopover({ children, ...props }: Props) {
   const event = "arg" in props ? props.arg.event : props.event; // 타입 좁히기
-
+  const { eventList, setEventList } = useEventListStore();
   const [open, setOpen] = useState(false);
   const [title, setTitle] = useState(event.title);
 
   useEffect(() => {
     setTitle(event.title);
   }, [event]);
+
+  const onClickDelete = () => {
+    setEventList(
+      eventList.filter(
+        (item) => item.extendedProps?.id !== event.extendedProps?.id,
+      ),
+    );
+    setOpen(false);
+  };
 
   return (
     <>
@@ -75,7 +85,7 @@ export default function EventPopover({ children, ...props }: Props) {
               className={
                 "bg-background text-primary border-primary hover:bg-primary/10 rounded border px-8 py-2 font-bold"
               }
-              onClick={() => setOpen(false)}
+              onClick={onClickDelete}
             >
               삭제
             </button>

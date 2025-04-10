@@ -5,7 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils.ts";
 import "@/styles/Calendar.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useCurrentEventStore } from "@/stores/calendarStore.ts";
+import {
+  useCurrentEventStore,
+  useEventListStore,
+} from "@/stores/calendarStore.ts";
 import dayjs from "dayjs";
 import "dayjs/locale/ko.js";
 import LocalizedFormat from "dayjs/plugin/localizedFormat";
@@ -23,35 +26,7 @@ export default function Calendar() {
   const { weeklyWeather, setWeeklyWeather } = useWeeklyWeatherStore();
   const calendarRef = useRef<FullCalendar>(null);
   const [curMonth, setCurMonth] = useState("");
-  const [events] = useState<
-    {
-      title: string;
-      date?: string;
-      start?: string;
-      end?: string;
-      allDay?: boolean;
-      color?: string;
-      extendedProps?: {
-        color?: string;
-      };
-    }[]
-  >([
-    {
-      title: "프로젝트 발표",
-      date: "2025-04-09",
-      extendedProps: {
-        color: "bg-rose-500",
-      },
-    },
-    {
-      title: "프로젝트 기간",
-      start: "2025-03-31",
-      end: "2025-04-08",
-      extendedProps: {
-        color: "bg-amber-500",
-      },
-    },
-  ]);
+  const { eventList } = useEventListStore();
 
   const updateMonthText = () => {
     const calendarApi = calendarRef.current?.getApi();
@@ -97,16 +72,16 @@ export default function Calendar() {
     const result = eventsOnDate.map((item) => {
       return {
         title: item.title,
-        start: item.start,
-        end: item.end,
-        allDay: item.allDay,
+        start: item.start ?? undefined,
+        end: item.end ?? undefined,
         extendedProps: {
           color: item.extendedProps.color,
+          id: item.extendedProps.id,
         },
       };
     });
 
-    setCurEvents({ events: result, date: arg.date });
+    setCurEvents({ date: arg.date, events: result });
   };
 
   useEffect(() => {
@@ -194,7 +169,7 @@ export default function Calendar() {
               contentHeight={"100%"}
               expandRows={true}
               titleFormat={{ year: "numeric", month: "short" }}
-              events={events}
+              events={eventList}
               datesSet={updateMonthText}
               selectable={true}
               headerToolbar={false}
@@ -206,11 +181,14 @@ export default function Calendar() {
                 const weather = index >= 0 && weeklyWeather?.[index];
 
                 const icon = weather ? (
-                  <WeatherIcon state={weather.pmWf} className={"size-[20px]"} />
+                  <WeatherIcon
+                    state={weather.pmWf}
+                    className={"daycell-icon size-[20px]"}
+                  />
                 ) : null;
 
                 return (
-                  <div className="flex flex-col items-center gap-1 leading-none">
+                  <div className="daycell-content flex flex-col items-center gap-1 leading-none">
                     <div
                       className={cn(
                         "flex h-7 w-7 items-center justify-center rounded-full",
@@ -258,7 +236,7 @@ export default function Calendar() {
                       <div
                         className={`rounded ${arg.event.extendedProps.color} mb-1`}
                       >
-                        <p className={"text-background px-2"}>
+                        <p className={"text-background truncate px-2"}>
                           {arg.event.title}
                         </p>
                       </div>
