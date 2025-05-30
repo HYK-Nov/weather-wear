@@ -68,12 +68,12 @@ export default function PmInfo() {
             </p>
             <div
               className={cn(
-                PM_GRADE_STYLE[airInfo.pm10Grade1h].style,
+                PM_GRADE_STYLE[airInfo.pm10Grade1h]?.style,
                 "flex items-center gap-1",
               )}
             >
               <Pm10Icon className={"size-5"} />
-              <p>{PM_GRADE_STYLE[airInfo.pm10Grade1h].label}</p>
+              <p>{PM_GRADE_STYLE[airInfo.pm10Grade1h]?.label}</p>
             </div>
           </div>
           {/* 초미세 */}
@@ -83,12 +83,12 @@ export default function PmInfo() {
             </p>
             <div
               className={cn(
-                PM_GRADE_STYLE[airInfo.pm25Grade1h].style,
+                PM_GRADE_STYLE[airInfo.pm25Grade1h]?.style,
                 "flex items-center gap-1",
               )}
             >
               <Pm25Icon className={"size-5"} />
-              <p>{PM_GRADE_STYLE[airInfo.pm25Grade1h].label}</p>
+              <p>{PM_GRADE_STYLE[airInfo.pm25Grade1h]?.label}</p>
             </div>
           </div>
         </>
